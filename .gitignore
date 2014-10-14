@@ -1,2 +1,5 @@
 /var
 media/catalog/product/cache
+app/etc/local.xml
+app/etc/local.xml~
+downloader/
