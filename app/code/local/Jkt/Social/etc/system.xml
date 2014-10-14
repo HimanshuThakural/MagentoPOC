@@ -178,6 +178,7 @@
 						</order>
 					</fields>
 				</facebook>				
+				<!--  
 				<linkedin translate="label">
 					<label>LinkedIn</label>
 					<frontend_type>text</frontend_type>
@@ -266,7 +267,8 @@
 							<show_in_store>1</show_in_store>
 						</order>
 					</fields>
-				</linkedin>								
+				</linkedin>		
+				-->						
 				<google translate="label">
 					<label>Google</label>
 					<frontend_type>text</frontend_type>

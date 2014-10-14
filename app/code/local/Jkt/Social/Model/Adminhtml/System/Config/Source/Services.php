@@ -33,7 +33,7 @@ class Jkt_Social_Model_Adminhtml_System_Config_Source_Services{
         return array(
         	array('value' => '', 'label' => ''),
             array('value' => Jkt_Social_Model_Type::FACEBOOK, 'label' => $helper->__('FaceBook')),
-            array('value' => Jkt_Social_Model_Type::LINKEDIN, 'label' => $helper->__('LinkedIn')),
+            //array('value' => Jkt_Social_Model_Type::LINKEDIN, 'label' => $helper->__('LinkedIn')),
             array('value' => Jkt_Social_Model_Type::GOOGLE, 'label' => $helper->__('Google')),
         );
     }
