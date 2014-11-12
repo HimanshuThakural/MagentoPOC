@@ -43,6 +43,7 @@ class User_Surveys_IndexController extends Mage_Core_Controller_Front_Action {
 		$this->loadLayout ()->getLayout ();
 		$customerSession = Mage::getSingleton ( 'customer/session' );
 		
+		
 		if (! $customerSession->isLoggedIn ()) {
 			$this->_redirect ( 'customer/account/login' );
 		}

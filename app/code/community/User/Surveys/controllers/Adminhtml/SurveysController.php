@@ -160,16 +160,6 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
             
             $visibility= $data['visibility'];
 
-            foreach ($model->getCollection()->getData() as $key => $value){
-            	//             	echo '<pre>'; print_r($value['form_name']); echo '</pre>';
-            	if($formName == $value['form_name']) {
-            		$this->_getSession()->addError(
-            				Mage::helper('user_surveys')->__('Form name already exists. Please fill another form name.'));
-            		$this->_redirect($redirectPath, $redirectParams);
-            		goto end;
-            	}
-            }
-            
             if ($visibility == 1) {
                 $collection = Mage::getModel('user_surveys/forms')
                 ->getCollection()
