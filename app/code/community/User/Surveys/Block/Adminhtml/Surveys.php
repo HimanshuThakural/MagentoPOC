@@ -44,7 +44,7 @@ class User_Surveys_Block_Adminhtml_Surveys extends Mage_Adminhtml_Block_Widget_G
         $this->addButton(
         		'user_surveys_featured_form_id',
         		array(
-        				'label'      => Mage::helper('user_surveys')->__('Get Code'),
+        				'label'      => Mage::helper('user_surveys')->__('Get Form Code'),
         				'onclick'    => 'setLocation(\'' . $this->getUrl('*/*/getCode').'\')',
         		)
         );

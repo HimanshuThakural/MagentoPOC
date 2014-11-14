@@ -51,31 +51,26 @@
  * @copyright Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
  * @license http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
  */
-?><?php
+?>
+<?php
+	$model = Mage::registry ( 'viewModel' );
+	$model->getSelect ()->joinLeft ( array (
+			'que' => 'surveys_questions' 
+	), 'main_table.question_id = que.id', array (
+			'surveys_questions' => 'questions' 
+	) );
 
-$model = Mage::registry ( 'viewModel' );
-
-$model->getSelect ()->joinLeft ( array (
-		'que' => 'surveys_questions' 
-), 'main_table.question_id = que.id', array (
-		'surveys_questions' => 'questions' 
-) );
+	$data = $model->getData ();
+	$userId = $data [0] ['user_id'];
+	$formId = $data [0] ['form_id'];
 	
-$data = $model->getData ();
-$userId = $data [0] ['user_id'];
-$formId = $data [0] ['form_id'];
-
-$formModel = Mage::getModel ( 'user_surveys/forms' )->load ( $formId );
-$formName = $formModel->getFormName ();
-
-$collection = Mage::getModel ( 'customer/customer' )->getCollection ()->addAttributeToFilter ( 'entity_id', array (
-		'eq' => $userId 
-) )->addAttributeToSelect ( 'email' );
-
-$user_data = $collection->getData ();
-
-$customerEmail = $user_data [0] ['email'];
-
+	$formModel = Mage::registry ( 'viewFormModel' );
+	$formName = $formModel->getFormName ();
+	
+	$collectionModel = Mage::registry ( 'viewUserId' );
+	$userData = $collectionModel->getData ();
+	
+	$customerEmail = $userData [0] ['email'];
 ?>
 <div class="entry-edit">
 	<div class="entry-edit-head">
@@ -83,22 +78,21 @@ $customerEmail = $user_data [0] ['email'];
 		</br>
 		<?php echo $this->__('Form Name :') ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $formName ?></h4>
 	</div>
-		<fieldset>
+	<fieldset>
 		<?php
 		foreach ( $data as $key => $value ) {
 			
-				$questions = 'Question : ' . $value ['surveys_questions'];
-				$answers = ' Answer : ' . $value ['value'];
-				echo $questions; ?> 
+			$questions = 'Question : ' . $value ['surveys_questions'];
+			$answers = ' Answer : ' . $value ['value'];
+			echo $questions;
+			?> 
 				</br>
 				<?php echo $answers; ?> 
-				</br>
-				</br>			
+				</br> </br>			
 		<?php } ?>
 
 	</fieldset>
 </div>
 <?php echo $this->getChildHtml('', true, true); ?>
-
 </html>
 

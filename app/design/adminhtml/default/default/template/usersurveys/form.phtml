@@ -46,37 +46,52 @@
  * versions in the future. If you wish to customize Magento for your
  * needs please refer to http://www.magentocommerce.com for more information.
  *
- * @category    design
- * @package     default_default
- * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @category design
+ * @package default_default
+ * @copyright Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
  */
 ?>
 <?php
+
 /**
  * Template for block Mage_Adminhtml_Block_Customer_Edit_Tab_View
  */
 ?>
-<?php  $model= Mage::registry('codeModel'); 
-$data = $model->getData();
-       
-        foreach ( $data as $key=>$value ) {
-        	$featuredId = $value ['id'];
-        }
-        $baseUrl = Mage::getBaseUrl();
-        $url =  $baseUrl.'surveys/index/view/id/' .$featuredId ;?>
+<?php
+
+
+$model = Mage::registry ( 'codeModel' );
+$data = $model->getData ();
+
+foreach ( $data as $key => $value ) {
+	$featuredId = $value ['id'];
+}
+$baseUrl = Mage::getBaseUrl ();
+$url = $baseUrl . 'surveys/index/view/id/' . $featuredId;
+?>
 
 <div class="entry-edit">
-    <div class="entry-edit-head" ><h4 class="icon-head head-customer-view"><?php echo Mage::helper('user_surveys')->__('Featured Survey Code') ?></h4></div>
- 	
- 	<fieldset>
+	<div class="entry-edit-head">
+		<h4 class="icon-head head-customer-view"><?php echo Mage::helper('user_surveys')->__('Featured Survey Code') ?></h4>
+	</div>
+
+	<fieldset>
 		<div align="center">
-			<p ><b> Copy Paste the code anywhere in your store to get Hyperlink or Button for featured Survey</b></p>
-		    <p align=""><b>Hyperlink code for Featured Survey:</p>
-		    <textarea style="width: 600px; height: 50px;" id= "textarea"><?php echo '<a href="'.$url. '">Featured Survey</a>' ?> </textarea>
-		   	</br>
-		   	<p align=""><b> Button code for Featured Survey:</p>
-		   	<textarea style="width: 600px; height: 50px;"><button class="btn btn-primary" onclick="window.location.href='<?php echo $url?>'"><?php echo 'Featured Survey'?></button></textarea> 
+			<p>
+				<b> Copy Paste the code anywhere in your store to get Hyperlink or
+					Button for featured Survey</b>
+			</p>
+			<p align="">
+				<b>Hyperlink code for Featured Survey:
+			</p>
+			<textarea style="width: 600px; height: 50px;" id="textarea"><?php echo '<a href="'.$url. '">Featured Survey</a>' ?> </textarea>
+			</br>
+			<p align="">
+				<b> Button code for Featured Survey:
+			
+			</p>
+			<textarea style="width: 600px; height: 50px;"><button class="btn btn-primary" onclick="window.location.href='<?php echo $url?>'"><?php echo 'Featured Survey'?></button></textarea>
 		</div>
 	</fieldset>
 </div>

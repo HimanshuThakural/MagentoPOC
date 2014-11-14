@@ -38,7 +38,7 @@ class User_Surveys_Block_Adminhtml_Surveys_Edit extends Mage_Adminhtml_Block_Wid
         parent::__construct();
 
         if (Mage::helper('user_surveys/admin')->isActionAllowed('save')) {
-            $this->_updateButton('save', 'label', Mage::helper('user_surveys')->__('Save Surveys '));
+            $this->_updateButton('save', 'label', Mage::helper('user_surveys')->__('Save Survey '));
             
         } else {
             $this->_removeButton('save');

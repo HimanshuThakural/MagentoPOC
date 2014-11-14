@@ -43,10 +43,10 @@ class User_Surveys_IndexController extends Mage_Core_Controller_Front_Action {
 		$this->loadLayout ()->getLayout ();
 		$customerSession = Mage::getSingleton ( 'customer/session' );
 		
-		
-		if (! $customerSession->isLoggedIn ()) {
-			$this->_redirect ( 'customer/account/login' );
-		}
+		if(!Mage::helper('customer')->isLoggedIn()) {
+ 		    Mage::getSingleton('customer/session')
+            ->setBeforeAuthUrl(Mage::helper('core/url')->getCurrentUrl());    		
+		}	
 		
 		$listBlock = $this->getLayout ()->getBlock ( 'forms.list' );
 		if ($listBlock) {
@@ -101,7 +101,11 @@ class User_Surveys_IndexController extends Mage_Core_Controller_Front_Action {
 	 */
 	public function viewAction() {
 		$customerSession = Mage::getSingleton ( 'customer/session' );
-		
+
+		if(!Mage::helper('customer')->isLoggedIn()) {
+ 		    Mage::getSingleton('customer/session')
+            ->setBeforeAuthUrl(Mage::helper('core/url')->getCurrentUrl());    		
+		}	
 		if (! $customerSession->isLoggedIn ()) {
 			$this->_redirect ( 'customer/account/login' );
 		}
@@ -174,6 +178,11 @@ class User_Surveys_IndexController extends Mage_Core_Controller_Front_Action {
 	 */
 	public function featuredSurveyAction() {
 		$customerSession = Mage::getSingleton ( 'customer/session' );
+		
+		if(!Mage::helper('customer')->isLoggedIn()) {
+ 		    Mage::getSingleton('customer/session')
+            ->setBeforeAuthUrl(Mage::helper('core/url')->getCurrentUrl());    		
+		}	
 		if (! $customerSession->isLoggedIn ()) {
 			$this->_redirect ( 'customer/account/login' );
 		}
