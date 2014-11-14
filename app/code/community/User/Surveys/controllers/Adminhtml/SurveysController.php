@@ -30,7 +30,7 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 	 * @return User_Surveys_Adminhtml_SurveysController
 	 */
 	protected function _initAction() {
-		// load layout, set active menu and breadcrumbs
+		
 		$this->loadLayout ()->_setActiveMenu ( 'surveys/manage' )->_addBreadcrumb ( Mage::helper ( 'user_surveys' )->__ ( 'Surveys' ), Mage::helper ( 'user_surveys' )->__ ( 'Surveys' ) )->_addBreadcrumb ( Mage::helper ( 'user_surveys' )->__ ( 'Manage Surveys' ), Mage::helper ( 'user_surveys' )->__ ( 'Manage Surveys' ) );
 		return $this;
 	}
@@ -69,6 +69,7 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 				$this->_getSession ()->addError ( Mage::helper ( 'user_surveys' )->__ ( 'Surveys item does not exist.' ) );
 				return $this->_redirect ( '*/*/' );
 			}
+			
 			// prepare title
 			$this->_title ( $model->getTitle () );
 			$breadCrumb = Mage::helper ( 'user_surveys' )->__ ( 'Edit Item' );
@@ -138,12 +139,11 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 
 			$formData = $model_form = Mage::getModel('user_surveys/forms')->getCollection()
             ->addFieldToFilter('id', array('neq' => $formId))->getData();
-         	//echo '<pre>'; print_r($formData); echo '</pre>'; 
+         	 
             foreach ($formData as $key => $value) {
 			
 				if ($value['form_name'] == $formName) {
 					$flag = 1;
-					//echo '<pre>'; print($flag); echo '</pre>';
 				}
             }
 
@@ -168,11 +168,11 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 				if($flag == 1) {
                     $this->_getSession()->addError(
                             Mage::helper('user_surveys')->__('Form name already exists. Please fill another form name.'));
-               
+                    $this->_redirect('*/*/edit/id/'.$formId);
                 }
 				elseif ($formName == '' || $ids == '') {
 					$this->_getSession ()->addError ( Mage::helper ( 'user_surveys' )->__ ( 'Please select atleast one question and form name' ) );
-				
+					$this->_redirect('*/*/edit/id/'.$formId);
 				} else {
 					$model->setQuestionsId ( $ids );
 					$model->setFormName ( $formName );
@@ -180,53 +180,47 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 					$model->setVisibility ( $visibility );
 					$model->save ();
 					$this->_getSession ()->addSuccess ( Mage::helper ( 'user_surveys' )->__ ( 'Survey Form ' . $message . ' Sucessfully' ) );
-					// $model->setStatus(1);
-				
+					$this->_redirect('*/*/');
 				}
+				
 			} else {
                 // Saving to Model
-                /*echo '<pre>'; print($flag); echo '</pre>';
-                die("HWERFG");*/
                 if($flag == 1) { 
                     $this->_getSession()->addError(
                             Mage::helper('user_surveys')->__('Form name already exists. Please fill another form name.'));
-                    
+                    $this->_redirect('*/*/edit/id/'.$formId);
                 }
 
             	elseif($formName == '' || $ids == '') {
             		$this->_getSession()->addError(
             		Mage::helper('user_surveys')->__('Please select atleast one question and form name'));
-            	
+            		$this->_redirect('*/*/edit/id/'.$formId);
             	}
+            	
 				else {
 					$model->setQuestionsId ( $ids );
 					$model->setFormName ( $formName );
-					// echo '<pre>'; print($formName); echo '</pre>'; die("Form Name");
 					$model->setStatus ( $status );
 					$model->setVisibility ( $visibility );
-					// echo "<pre>"; print($formName); echo "</pre>"; die("Hereeeeeeeeeeeeeeeeeeeee");
 					
 					// saving into model
 					$model->save ();
 					$this->_getSession ()->addSuccess ( Mage::helper ( 'user_surveys' )->__ ( 'Survey Form ' . $message . ' Sucessfully' ) );
-					
+					$this->_redirect('*/*/');
 				}
-			}
+			}			
 		}
-
-
-	$this->_redirect('*/*/');
 	}
 	
 	/**
 	 * Delete action
 	 */
 	public function deleteAction() {
+		
 		// check if we know what should be deleted
 		$itemId = $this->getRequest ()->getParam ( 'id' );
 		if ($itemId) {
 			try {
-				// init model and delete
 				/**
 				 * @var $model User_Surveys_Model_Item
 				 */
@@ -245,8 +239,7 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 				$this->_getSession ()->addException ( $e, Mage::helper ( 'user_surveys' )->__ ( 'An error occurred while deleting the Form.' ) );
 			}
 		}
-		
-		// go to grid
+	
 		$this->_redirect ( '*/*/' );
 	}
 	
@@ -313,15 +306,11 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 				'customer_email' => 'email' 
 		) )->group ( 'user_id' );
 		
-		/* Start By Ankush */
 		Mage::register ( 'collection', $collection );
-		/* End By Ankush */
 		
 		$this->_initAction ();
 		$this->renderLayout ();
 	}
-	
-	/* Start By Ankush */
 	
 	/**
 	 * View action

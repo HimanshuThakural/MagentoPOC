@@ -62,8 +62,8 @@ class User_Surveys_Block_Adminhtml_Questions_Edit_Form extends Mage_Adminhtml_Bl
 
         $fieldset->addField('type', 'select', array(
             'name' => 'input_type',
-            'label' => Mage::helper('eav')->__('Customer Input Type'),
-            'title' => Mage::helper('eav')->__('Customer Input Type'),
+            'label' => Mage::helper('eav')->__('Question Input Type'),
+            'title' => Mage::helper('eav')->__('Question Input Type'),
             'value' => 'text',
             'values'=> $inputTypes
         ));

@@ -72,6 +72,7 @@ class User_Surveys_Block_Adminhtml_Surveys_Grid extends Mage_Adminhtml_Block_Wid
                 'width' => '250px',
                 'index' => 'status',
                 'type'  => 'options',
+            	'sortable'  => TRUE,
                 'options' => Mage::getSingleton('user_surveys/surveys')->getOptionArray(),
         ));
 
@@ -82,9 +83,9 @@ class User_Surveys_Block_Adminhtml_Surveys_Grid extends Mage_Adminhtml_Block_Wid
                 'type'      => 'action',
                 'getter'    => 'getId',
                 'actions'   => array(array(
-                    'caption' => Mage::helper('user_surveys')->__('View'),
-                    'url'     => array('base' => '*/*/results'),
-                    'field'   => 'id'
+                'caption' => Mage::helper('user_surveys')->__('View'),
+                'url'     => array('base' => '*/*/results'),
+                'field'   => 'id'
                 )),
                 'filter'    => false,
                 'sortable'  => false,
