@@ -115,6 +115,7 @@ class Mage_CatalogSearch_Model_Advanced extends Mage_Core_Model_Abstract
     {
         /* @var $attributes Mage_Catalog_Model_Resource_Eav_Resource_Product_Attribute_Collection */
         $attributes = $this->getData('attributes');
+        
         if (is_null($attributes)) {
             $product = Mage::getModel('catalog/product');
             $attributes = Mage::getResourceModel('catalog/product_attribute_collection')
@@ -123,6 +124,10 @@ class Mage_CatalogSearch_Model_Advanced extends Mage_Core_Model_Abstract
                 ->addStoreLabel(Mage::app()->getStore()->getId())
                 ->setOrder('main_table.attribute_id', 'asc')
                 ->load();
+            /* echo "<pre>";
+            print_r($attributes->getData());
+            echo "</pre>";
+            exit(); */
             foreach ($attributes as $attribute) {
                 $attribute->setEntity($product->getResource());
             }

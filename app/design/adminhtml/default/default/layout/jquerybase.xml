@@ -1,0 +1,11 @@
+<layout version="0.1.0">
+   
+  <default>
+    <reference name="head">
+      <action method="addItem">
+        <type>skin_css</type> 
+        <name>css/jquerybase/jquerybase.css</name> 
+      </action> 
+     </reference> 
+  </default> 
+ </layout>        

@@ -228,6 +228,10 @@
                     <create>1</create>
                     <update>1</update>
                 </email>
+                <!-- <occupation>
+                    <create>1</create>
+                    <update>1</update>
+                </occupation> --> 
                 <password>
                     <create>1</create>
                 </password>

@@ -231,6 +231,14 @@ class Mage_Customer_Model_Resource_Setup extends Mage_Eav_Model_Entity_Setup
                         'position'           => 80,
                         'admin_checkout'    => 1
                     ),
+                	/* 'occupation'        => array(
+                				'type'               => 'static',
+                				'label'              => 'Occupation',
+                				'input'              => 'text',
+                				'sort_order'         => 90,
+                				'validate_rules'     => 'a:2:{s:15:"max_text_length";i:255;s:15:"min_text_length";i:1;}',
+                				'position'           => 90,
+                	), */
                     'group_id'           => array(
                         'type'               => 'static',
                         'label'              => 'Group',

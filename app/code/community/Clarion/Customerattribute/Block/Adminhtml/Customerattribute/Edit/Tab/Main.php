@@ -1,7 +1,7 @@
 <?php
 /**
  * Customer attribute add/edit form main tab
- * 
+ *
  * @category    Clarion
  * @package     Clarion_Customerattribute
  * @author      Clarion Magento Team
@@ -9,7 +9,7 @@
 
 class  Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Edit_Tab_Main extends Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Edit_Main_Abstract
 {
-    
+
     /**
      * Preparing default form elements for editing attribute
      *
@@ -23,7 +23,7 @@ class  Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Edit_Tab_Main
         $form = $this->getForm();
         /* @var $fieldset Varien_Data_Form_Element_Fieldset */
         $fieldset = $form->getElement('base_fieldset');
-        
+
         // frontend properties fieldset
         $fieldset = $form->addFieldset('front_fieldset', array('legend'=>Mage::helper('clarion_customerattribute')->__('Frontend Properties')));
         $fieldset->addField('sort_order', 'text', array(
@@ -33,9 +33,9 @@ class  Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Edit_Tab_Main
             'note' => Mage::helper('clarion_customerattribute')->__('The order to display attribute on the frontend'),
             'class' => 'validate-digits',
         ));
-        
+
         $usedInForms = $attributeObject->getUsedInForms();
-        
+
         $fieldset->addField('customer_account_create', 'checkbox', array(
             'name' => 'customer_account_create',
             'checked'   => in_array('customer_account_create', $usedInForms) ? true : false,
@@ -43,7 +43,7 @@ class  Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Edit_Tab_Main
             'label' => Mage::helper('clarion_customerattribute')->__('Show on the Customer Account Create Page'),
             'title' => Mage::helper('clarion_customerattribute')->__('Show on the Customer Account Create Page'),
         ));
-        
+
         $fieldset->addField('customer_account_edit', 'checkbox', array(
             'name' => 'customer_account_edit',
             'checked'   => in_array('customer_account_edit', $usedInForms) ? true : false,
@@ -51,7 +51,7 @@ class  Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Edit_Tab_Main
             'label' => Mage::helper('clarion_customerattribute')->__('Show on the Customer Account Edit Page'),
             'title' => Mage::helper('clarion_customerattribute')->__('Show on the Customer Account Edit Page'),
         ));
-        
+
         $fieldset->addField('adminhtml_customer', 'checkbox', array(
             'name' => 'adminhtml_customer',
             'checked'   => in_array('adminhtml_customer', $usedInForms) ? true : false,
@@ -60,7 +60,7 @@ class  Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Edit_Tab_Main
             'title' => Mage::helper('clarion_customerattribute')->__('Show on the Admin Manage Customers'),
             'note' => Mage::helper('clarion_customerattribute')->__('Show on the Admin Manage Customers Add and Edit customer Page'),
         ));
-        
+
          // define field dependencies
         /*
         $this->setChild('form_after', $this->getLayout()->createBlock('adminhtml/widget_form_element_dependence')

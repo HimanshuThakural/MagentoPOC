@@ -1,7 +1,7 @@
 <?php
 /**
  * Manage Customer Attribute controller file
- * 
+ *
  * @category    Clarion
  * @package     Clarion_Customerattribute
  * @author      Clarion Magento Team
@@ -9,13 +9,13 @@
 class Clarion_Customerattribute_Adminhtml_CustomerattributeController extends Mage_Adminhtml_Controller_Action
 {
     protected $_entityTypeId;
-    
+
     public function preDispatch()
     {
         parent::preDispatch();
         $this->_entityTypeId = Mage::getModel('eav/entity')->setType(Mage::getModel('eav/config')->getEntityType('customer'))->getTypeId();
     }
-    
+
     /**
      * Init actions
      *
@@ -43,15 +43,15 @@ class Clarion_Customerattribute_Adminhtml_CustomerattributeController extends Ma
     /**
      * Index action method
      */
-    public function indexAction() 
+    public function indexAction()
     {
         $this->_initAction()
             ->renderLayout();
     }
-    
+
     /**
      * Code to display the form
-     * 
+     *
      * The main form container gets added to the content and the tabs block gets added to left.
      */
     public function newAction()
@@ -59,13 +59,13 @@ class Clarion_Customerattribute_Adminhtml_CustomerattributeController extends Ma
         // the same form is used to create and edit
         $this->_forward('edit');
     }
-    
+
     /**
      * Edit Customer Attribute
      */
     public function editAction()
-    {
-         $id = $this->getRequest()->getParam('attribute_id');
+    {   /*die("HERE");*/
+        $id = $this->getRequest()->getParam('attribute_id');
         $model = Mage::getModel('clarion_customerattribute/customerattribute')
             ->setEntityTypeId($this->_entityTypeId);
 
@@ -79,7 +79,7 @@ class Clarion_Customerattribute_Adminhtml_CustomerattributeController extends Ma
                 return;
             }
         }
-        
+
         // entity type check
             if ($model->getEntityTypeId() != $this->_entityTypeId) {
                 Mage::getSingleton('adminhtml/session')->addError(
@@ -87,16 +87,16 @@ class Clarion_Customerattribute_Adminhtml_CustomerattributeController extends Ma
                 $this->_redirect('*/*/');
                 return;
             }
-        
+
          // Sets the window title
         $this->_title($id ? $model->getFrontendLabel() : $this->__('New Attribute'));
-        
+
         // 3. Set entered data if was error when we do save
         $data = Mage::getSingleton('adminhtml/session')->getCustomerattributeData(true);
         if (! empty($data)) {
             $model->setData($data);
         }
-        
+
        // print_r($model->getUsedInForms());
         //print_r($model->getData());
       //  exit;
@@ -111,16 +111,16 @@ class Clarion_Customerattribute_Adminhtml_CustomerattributeController extends Ma
                     : Mage::helper('clarion_customerattribute')->__('New Customer Attribute'),
                 $id ? Mage::helper('clarion_customerattribute')->__('Edit Customer Attribute')
                     : Mage::helper('clarion_customerattribute')->__('New Customer Attribute'));
-        
+
         $this->_addContent($this->getLayout()->createBlock('clarion_customerattribute/adminhtml_customerattribute_edit'))
                         ->_addLeft($this->getLayout()->createBlock('clarion_customerattribute/adminhtml_customerattribute_edit_tabs'));
-        
+
         $this->getLayout()->getBlock('clarion_customerattribute_edit_js')
             ->setIsPopup((bool)$this->getRequest()->getParam('popup'));
 
         $this->renderLayout();
     }
-    
+
     public function validateAction()
     {
         $response = new Varien_Object();
@@ -141,7 +141,7 @@ class Clarion_Customerattribute_Adminhtml_CustomerattributeController extends Ma
 
         $this->getResponse()->setBody($response->toJson());
     }
-    
+
     /**
      * Filter post data
      *
@@ -162,9 +162,9 @@ class Clarion_Customerattribute_Adminhtml_CustomerattributeController extends Ma
         }
         return $data;
     }
-    
+
     /**
-     * 
+     *
      * Save customer attributes
      */
     public function saveAction()
@@ -300,7 +300,7 @@ class Clarion_Customerattribute_Adminhtml_CustomerattributeController extends Ma
          }
          $this->_redirect('*/*/');
      }
-    
+
    /**
      * Delete customer attribute
      *
@@ -313,7 +313,7 @@ class Clarion_Customerattribute_Adminhtml_CustomerattributeController extends Ma
 
             // entity type check
             $model->load($id);
-            
+
             if ($model->getEntityTypeId() != $this->_entityTypeId) {
                 Mage::getSingleton('adminhtml/session')->addError(
                     Mage::helper('clarion_customerattribute')->__('This attribute cannot be deleted.'));
@@ -338,7 +338,7 @@ class Clarion_Customerattribute_Adminhtml_CustomerattributeController extends Ma
             Mage::helper('clarion_customerattribute')->__('Unable to find an attribute to delete.'));
         $this->_redirect('*/*/');
     }
-    
+
     /**
      * Check the permission to run it
      *

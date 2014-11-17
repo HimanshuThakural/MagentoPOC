@@ -1,4 +1,0 @@
-2014-09-29T09:56:50+00:00 ERR (3): Warning: Missing argument 1 for Jkt_Social_Controller_Social::_redirectUrl(), called in /var/www/magento/app/code/local/Jkt/Social/controllers/FacebookController.php on line 101 and defined  in /var/www/magento/app/code/local/Jkt/Social/Controller/Social.php on line 94
-2014-09-29T09:56:50+00:00 ERR (3): Notice: Undefined variable: url  in /var/www/magento/app/code/local/Jkt/Social/Controller/Social.php on line 96
-2014-10-01T07:53:02+00:00 ERR (3): Warning: Missing argument 1 for Jkt_Social_Controller_Social::_redirectUrl(), called in /var/www/magento/app/code/local/Jkt/Social/controllers/FacebookController.php on line 101 and defined  in /var/www/magento/app/code/local/Jkt/Social/Controller/Social.php on line 94
-2014-10-01T07:53:02+00:00 ERR (3): Notice: Undefined variable: url  in /var/www/magento/app/code/local/Jkt/Social/Controller/Social.php on line 96

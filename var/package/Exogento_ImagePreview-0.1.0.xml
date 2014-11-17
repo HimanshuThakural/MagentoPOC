@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+    <name>Exogento_ImagePreview</name>
+    <version>0.1.0</version>
+    <stability>stable</stability>
+    <license uri="http://www.gnu.de/documents/lgpl.de.html">GNU Lesser General Public License (LGPL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Another Product Image Viewer</summary>
+    <description>Small extension for customization of product images view. Loads all of product images at 600x600 resolution at visit of product page</description>
+    <notes>+ Posibility to enable/disable ImagePreview plugin over admin panel&#xD;
+</notes>
+    <authors><author><name>F</name><user>exogento</user><email>support@exogento.de</email></author></authors>
+    <date>2012-03-14</date>
+    <time>15:41:31</time>
+    <contents><target name="magecommunity"><dir name="Exogento"><dir name="ImagePreview"><dir name="Block"><file name="View.php" hash="70e500d157d360d5ab98a6b7ab9c321d"/></dir><dir name="Helper"><file name="Data.php" hash="248533438baeb80173a92fb8f8c2f514"/></dir><dir name="etc"><file name="adminhtml.xml" hash="4dd2bc552b3cba29e9e17c2651ef7c0c"/><file name="config.xml" hash="a2bdb0ed23f2c1862143a84157fa5262"/><file name="system.xml" hash="3534aa1dbd9d1579926fa01796ae7893"/></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="css"><dir name="imagepreview"><file name="styles.css" hash="213db5f933596ae935ae3963f29eb621"/></dir></dir><dir name="js"><dir name="imagepreview"><file name="ip.js" hash="94d6aa6fc5128001bf72afca0c0e78c7"/></dir></dir><dir name="images"><dir name="imagepreview"><file name="10x10_tr.png" hash="f2bce1a0917415ddf8ab0ef7a1e3d523"/><file name="arrow_left-32.png" hash="66d85d29fe8a906716dab484a384aa20"/><file name="arrow_left-32_hover.png" hash="49b062e261f8927f4e11e931c00053eb"/><file name="arrow_redo-32.png" hash="5f1e7047f5f536547fd2568215f8cc91"/><file name="arrow_redo-32_hover.png" hash="7ec9fa7ecb43cda5c2682c402667117f"/><file name="arrow_right-32.png" hash="7103b895f40ffcb528d27cd7ccb9ff44"/><file name="arrow_right-32_hover.png" hash="be4357850d210a0dfbd5bb34fd9c64d4"/><file name="arrow_undo-32.png" hash="bf7074ba4d87c80da2c50c7554436f2a"/><file name="arrow_undo-32_hover.png" hash="d6845d1fb1874ecf9aca2033f56999ca"/><file name="navinum_border.png" hash="be49212bc77f135681ac7d283cf7596d"/><file name="window_close.png" hash="34b4a057dceb80fb5c2632987fff40c9"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Exogento_ImagePreview.xml" hash="3ce796d4956c62ce3bb814ea9e7a0902"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="imagepreview.xml" hash="1337fe97cab53eceaed6a4f160415861"/></dir><dir name="template"><dir name="imagepreview"><file name="content.phtml" hash="3966125989d8d515244edc7008355efe"/><file name="media.phtml" hash="7d8730cd989d1ad8c55cb7aed1e66bf6"/><file name="page.phtml" hash="7949696b79643341359508a6d6d64921"/></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php><package><name>Mxperts_Jquery</name><channel>community</channel><min></min><max></max></package></required></dependencies>
+</package>

@@ -24,38 +24,30 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php $_eventsItem = $this->helper('social_events')->getEventsItemInstance(); ?>
-<div id="events_item_messages"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<?php $_surveysItem = $this->helper('user_surveys')->getSurveysItemInstance(); ?>
+<div id="surveys_item_messages"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 
 <div class="page-title">
-    <h1><?php echo $this->escapeHtml($_eventsItem->getTitle()) ?></h1>
-
-    <div class="events_item_subtitle">
-        <?php echo "Category : ". $this->escapeHtml($_eventsItem->getCategory());?>
-        <?php echo "<br/>Schedule : From ". $this->formatDate($_eventsItem->getTimePublished(), Mage_Core_Model_Locale::FORMAT_TYPE_FULL) . ' Till ' . $this->formatDate($_eventsItem->getEndDate(), Mage_Core_Model_Locale::FORMAT_TYPE_FULL) ?>
-        <?php echo "<br/>Venue : ". $this->escapeHtml($_eventsItem->getVenue())?>
-		<?php echo "<br/>Entry Fee : ".Mage::helper('core')->currency($_eventsItem->getEntryFee()); ?>
-		<?php echo "<br/>Contact Details : ". $this->escapeHtml($_eventsItem->getContactDetails());?>
-    </div>
-
+    <h1><?php echo $this->escapeHtml($_surveysItem->getFormName()) ?></h1>
 </div>
 
-<div class="events_item_view">
-    <?php if ($imageUrl = $this->getImageUrl($_eventsItem, 500)): ?>
-        <p><br></p>
-        <p><img src="<?php echo $imageUrl ?>" alt="<?php echo $this->escapeHtml($_eventsItem->getTitle()) ?>" />
-        <p><br></p>
-        <iframe width="500" height="300" frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDnyECxdC0y_KA9-rom0WqopI8AWmUz6AQ&q=<?php echo $this->escapeHtml($_eventsItem->getVenue());?>">
-        </iframe></p>
-        <p><br></p>
+
+<div class="surveys_item_view">
+    <?php if ($imageUrl = $this->getImageUrl($_surveysItem, 500)): ?>
+       <p><br></p>
+       <p><img src="<?php echo $imageUrl ?>" alt="<?php echo $this->escapeHtml($_surveysItem->getTitle()) ?>" /></p>
+
+
+       <p><br></p>
     <?php endif; ?>
-    <div class="events_item_content"><span style="font-size:14px;font-weight:bold">Event Details</span><br/><?php echo $_eventsItem->getDetails(); ?></div>
-	 <div class="events_item_content"><span style="font-size:14px;font-weight:bold">Eligibility</span><br/><?php echo $_eventsItem->getEligibility(); ?></div>
+
+    <form action="insert.php" method="post"><h1>User Survey Form</h1>
+     <input type="text" name="title" /><br/>
+     <input type="submit" value="Submit"/></form>
 
     <div class="pager">
         <a href="<?php echo $this->getBackUrl() ?>">
-            <?php echo Mage::helper('social_events')->__('Return to list') ?>
+            <?php echo Mage::helper('user_surveys')->__('Return to list') ?>
         </a>
     </div>
 </div>

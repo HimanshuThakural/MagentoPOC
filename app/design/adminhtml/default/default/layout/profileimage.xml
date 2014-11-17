@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addJs">
+                <script>jquery/sstech/profileimage/jQuery.js</script>
+            </action>
+            <action method="addCss">
+                <stylesheet>css/sstech/profileimage.css</stylesheet>
+            </action>
+        </reference>
+
+        <reference name="header">
+            <action method="setTemplate">
+                <template>profileimage/page/html/header.phtml</template>
+            </action>
+            <block type="profileimage/header_profileimage" name="header_profileimage" template="profileimage/header/profileimage.phtml"/>
+        </reference>
+    </default>
+
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="profileimage">
+                <name>set_profileimage</name>
+                <path>profileimage/customer/form</path>
+                <label>My Profileimage</label>
+            </action>
+        </reference>
+    </customer_account>
+
+    <profileimage_customer_form>
+        <label>My Profileimage</label>
+        <update handle="customer_account"/>
+
+        <reference name="my.account.wrapper">
+            <block  type="profileimage/header_profileimage" name="profileimage_customer_form" template="profileimage/customer/form.phtml" />
+        </reference>
+        <reference name="root">
+            <action
+                method="setHeaderTitle"
+                translate="title"
+                module="profileimage">
+                <title>My Profileimage</title>
+            </action>
+        </reference>
+    </profileimage_customer_form>
+</layout>

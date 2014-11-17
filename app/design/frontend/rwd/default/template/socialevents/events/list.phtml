@@ -34,7 +34,7 @@
         <div id="item_<?php echo $eventsItem->getId() ?>" class="page-title">
             <h2>
                 <a href="<?php echo $this->getItemUrl($eventsItem) ?>">
-                    <?php echo $this->escapeHtml($eventsItem->getTitle()) ?>
+                    <?php echo $this->escapeHtml($eventsItem->getEntryFee()) ?>
                 </a>
             </h2>
 
@@ -43,9 +43,11 @@
             <?php endif; ?>
             <p><br></p>
             <div class="events_item_subtitle">
-                <?php echo "Category : ". $this->escapeHtml($eventsItem->getCategory());?>
+                <a href="<?php echo $this->escapeHtml($eventsItem->getId());?>">
+                 <?php echo $this->escapeHtml($eventsItem->getTitle()) ?>
+                </a>
                 <?php echo "<br/>Schedule : From ". $this->formatDate($eventsItem->getTimePublished(), Mage_Core_Model_Locale::FORMAT_TYPE_SHORT) . ' Till ' . $this->formatDate($eventsItem->getEndDate(), Mage_Core_Model_Locale::FORMAT_TYPE_SHORT) ?>
-                <?php echo "<br/>Venue : ". $this->escapeHtml($eventsItem->getVenue());?>
+                <?php echo "<br/>Venue : " .$this->escapeHtml($eventsItem->getVenue());?>
             </div>
             <p><br></p>
 

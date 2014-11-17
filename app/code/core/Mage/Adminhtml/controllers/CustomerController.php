@@ -183,7 +183,7 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
      * Save customer action
      */
     public function saveAction()
-    {
+    {  
         $data = $this->getRequest()->getPost();
         if ($data) {
             $redirectBack = $this->getRequest()->getParam('back', false);

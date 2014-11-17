@@ -1,7 +1,7 @@
 <?php
 /**
  * Customer attribute add/edit form block
- * 
+ *
  * @category    Clarion
  * @package     Clarion_Customerattribute
  * @author      Clarion Magento Team
@@ -17,7 +17,7 @@ class Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Edit_Form exte
                                   'enctype' => 'multipart/form-data'
                                )
     );
-     
+
     $form->setUseContainer(true);// form renderer to output the surrounding <form> tags
     $this->setForm($form);
     return parent::_prepareForm();

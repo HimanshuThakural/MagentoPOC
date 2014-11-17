@@ -1,0 +1,58 @@
+<div class="page-title">
+  <h2><?php echo $this->__('Lesson14 Create Person') ?></h2>
+  </div>
+  <!--Form Information-->
+  <form id="person-form-validate" method="post" action="<?php echo $this->getActionOfForm()?>">
+  <div class="fieldset">
+  <h2 class="legend"><?php echo $this->__('Person Information')?></h2>
+  <ul class="form-list">
+ <li class="fields">
+  <div class="customer-name">
+  <div class="field name-firstname">
+  <label class="required" for="firstname"><em>*</em><?php echo $this->__('Name')?></label>
+  <div class="input-box">
+  <input type="text" class="input-text required-entry" maxlength="255" title="Name" value="" name="name" id="name">
+  </div>
+  </div>
+  <div class="field birthday">
+  <label class="required" for="birthday"><em>*</em><?php echo $this->__('Birthday')?></label>
+  <div class="input-box">
+ <input type="text" class="input-text required-entry validate-date" maxlength="255" title="Birthday" value="" name="birthday" id="birthday">
+  </div>
+  </div>
+  </div>
+  </li>
+  <li class="fields">
+ <div class="gender">
+  <div class="field gender">
+  <label class="required" for="gender"><em>*</em><?php echo $this->__('Gender')?></label>
+ <div class="input-box">
+ <select type="text" class="input-text required-entry" title="Gender" name="gender" id="gender">
+  <option value=""><?php echo $this->__('--Please Select--')?></option>
+  <option value="Male"><?php echo $this->__('Male')?></option>
+  <option value="Female"><?php echo $this->__('Female')?></option>
+  </select>
+  </div>
+  </div>
+  <div class="field address">
+  <label class="required" for="address"><em>*</em><?php echo $this->__('Address')?></label>
+  <div class="input-box">
+  <input type="text" class="input-text required-entry" maxlength="255" title="Address" value="" name="address" id="address">
+  </div>
+  </div>
+  </div>
+  </li>
+  </ul>
+  </div>
+  <!--Button & Link-->
+  <div class="buttons-set">
+  <p class="required">* <?php echo $this->__('Required Fields')?></p>
+  <p class="back-link"><a class="back-link" href="<?php echo $this->getBaseUrl();?>"><small>&laquo;</small>Back</a></p>
+  <button class="button" title="Submit" type="submit"><span><span><?php echo $this->__('Submit')?></span></span></button>
+  </div>
+  </form>
+  <script type="text/javascript">
+  //<![CDATA[
+  var dataForm = new VarienForm('person-form-validate', true);
+  //]]>
+    </script>

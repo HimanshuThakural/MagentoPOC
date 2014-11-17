@@ -1,0 +1,372 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category Mxperts
+ * @package Mxperts_Jquerytools
+ * @authors TMEDIA cross communications <info@tmedia.de>, Johannes Teitge <teitge@tmedia.de>, Igor Jankovic <jankovic@tmedia.de>, Daniel Sasse <d.sasse1984@googlemail.com>
+ * @copyright TMEDIA cross communications, Doris Teitge-Seifert
+ * @license http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config>
+
+    <sections>
+        <jquerytools translate="label" module="jquerytools">
+            <label>jQuery-Tools 1.2.7</label>            
+            <tab>jqueryall</tab>           
+            <sort_order>360</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>0</show_in_store>
+            
+            <groups>
+            
+                <jquerytools translate="label">
+                    <label>jQuery-Tools Default</label>
+                    <comment><![CDATA[<a href="http://flowplayer.org/tools/index.html" target="_blank"><img src="http://www.mxperts.de/jquery_tools.jpg"></a>]]></comment>                    
+                    <frontend_type>text</frontend_type>
+                    <sort_order>9</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                    
+                    <fields>                                         
+                        <active translate="label">                        
+                            <label>jQuery-Tools Enabled</label>
+                            <comment><![CDATA[<b>enable</b> or <b>disable</b> jQuery-Tools.]]></comment>                                                        
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>0</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        
+                        <jquerytools_minified translate="label">                        
+                            <label>Minified and Gzipped</label>
+                            <comment><![CDATA[Enable it for <strong>PRODUCTION</strong>]]></comment>                                                        
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>1</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </jquerytools_minified>                                                                          
+                                                             
+                    </fields>
+                </jquerytools>
+                
+                <jquerytools_tabs translate="label">
+                    <label>jQuery-Tools TABS</label>
+                    <comment><![CDATA[<a href="http://flowplayer.org/tools/index.html" target="_blank"><img src="http://www.mxperts.de/jquery_tools_tabs.jpg"></a>]]></comment>                    
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                    
+                    <fields>                      
+                        <tabs translate="label">                        
+                            <label>Tabs</label>
+                            <comment><![CDATA[<a href="http://flowplayer.org/tools/tabs.html" target="_blank">Documentation and Demos</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>0</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </tabs>
+                        <tabs_sliedshow translate="label">                        
+                            <label>Slideshow plugin</label>
+                            <comment><![CDATA[Requires Tabs! <a href="http://flowplayer.org/tools/tooltip.html#slide" target="_blank">more information</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>1</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </tabs_sliedshow>
+                        <tabs_history translate="label">                        
+                            <label>History plugin</label>
+                            <comment><![CDATA[Requires Tabs! <a href="http://flowplayer.org/tools/tooltip.html#slide" target="_blank">more information</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>2</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </tabs_history>                                                
+                    </fields>                        
+                </jquerytools_tabs>
+                
+                
+                <jquerytools_tooltip translate="label">
+                    <label>jQuery-Tools TOOLTIP</label>
+                    <comment><![CDATA[<a href="http://flowplayer.org/tools/index.html" target="_blank"><img src="http://www.mxperts.de/jquery_tools_tooltip.jpg"></a>]]></comment>                    
+                    <frontend_type>text</frontend_type>
+                    <sort_order>11</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                    
+                    <fields>                      
+                        <tooltip translate="label">                        
+                            <label>Tooltip</label>
+                            <comment><![CDATA[<a href="http://flowplayer.org/tools/tooltip.html" target="_blank">Documentation and Demos</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>0</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </tooltip>
+                        <tooltip_slide translate="label">                        
+                            <label>Slide effect</label>
+                            <comment><![CDATA[Requires Tooltip! <a href="http://flowplayer.org/tools/tooltip.html#slide" target="_blank">more information</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>1</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </tooltip_slide>
+                        <tooltip_position translate="label">                        
+                            <label>Dynamic positioning plugin</label>
+                            <comment><![CDATA[Requires Tooltip! <a href="http://flowplayer.org/tools/tooltip.html#dynamic" target="_blank">more information</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>2</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </tooltip_position>                                                
+                    </fields>                        
+                </jquerytools_tooltip>  
+                
+                
+                <jquerytools_scrollable translate="label">
+                    <label>jQuery-Tools SCROLLABLE</label>
+                    <comment><![CDATA[<a href="http://flowplayer.org/tools/index.html" target="_blank"><img src="http://www.mxperts.de/jquery_tools_scrollable.jpg"></a>]]></comment>                    
+                    <frontend_type>text</frontend_type>
+                    <sort_order>12</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                    
+                    <fields>                      
+                        <scrollable translate="label">                        
+                            <label>Scrollable</label>
+                            <comment><![CDATA[<a href="http://flowplayer.org/tools/overlay.html" target="_blank">Documentation and Demos</a>]]></comment>                                                                                     
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>0</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </scrollable>
+                        <scrollable_circular translate="label">                        
+                            <label>Circular plugin</label>
+                            <comment><![CDATA[Requires Scrollable! <a href="http://flowplayer.org/tools/overlay.html#circular" target="_blank">more information</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>1</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </scrollable_circular>
+                        <scrollable_autoscroll translate="label">                        
+                            <label>Autoscroll plugin</label>
+                            <comment><![CDATA[Requires Scrollable! <a href="http://flowplayer.org/tools/overlay.html#autoscroll" target="_blank">more information</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>2</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </scrollable_autoscroll>
+                        <scrollable_navigator translate="label">                        
+                            <label>Navigator plugin</label>
+                            <comment><![CDATA[Requires Scrollable! <a href="http://flowplayer.org/tools/overlay.html#navigator" target="_blank">more information</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>3</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </scrollable_navigator>
+                        <scrollable_mouse translate="label">                        
+                            <label>Mousewheel plugin</label>
+                            <comment><![CDATA[Requires Scrollable! <a href="http://flowplayer.org/tools/overlay.html#mousewheel" target="_blank">more information</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>4</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </scrollable_mouse>                                                                                                
+                    </fields>                        
+                </jquerytools_scrollable>
+                
+                
+                <jquerytools_overlay translate="label">
+                    <label>jQuery-Tools OVERLAY</label>
+                    <comment><![CDATA[<a href="http://flowplayer.org/tools/index.html" target="_blank"><img src="http://www.mxperts.de/jquery_tools_overlay.jpg"></a>]]></comment>                    
+                    <frontend_type>text</frontend_type>
+                    <sort_order>13</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                    
+                    <fields>                      
+                        <overlay translate="label">                        
+                            <label>Overlay</label>
+                            <comment><![CDATA[<a href="http://flowplayer.org/tools/overlay.html" target="_blank">Documentation and Demos</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>0</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </overlay>
+                        <overlay_gallery translate="label">                        
+                            <label>Gallery plugin</label>
+                            <comment><![CDATA[Requires Tooltip! <a href="http://flowplayer.org/tools/overlay.html#gallery" target="_blank">more information</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>1</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </overlay_gallery>
+                        <overlay_apple translate="label">                        
+                            <label>Apple effect</label>
+                            <comment><![CDATA[Requires Overlay! <a href="http://flowplayer.org/tools/overlay.html#apple" target="_blank">more information</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>2</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </overlay_apple>                                                
+                    </fields>                        
+                </jquerytools_overlay>      
+                
+                <jquerytools_expose translate="label">
+                    <label>jQuery-Tools EXPOSE</label>
+                    <comment><![CDATA[<a href="http://flowplayer.org/tools/index.html" target="_blank"><img src="http://www.mxperts.de/jquery_tools_expose.jpg"></a>]]></comment>                    
+                    <frontend_type>text</frontend_type>
+                    <sort_order>14</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                    
+                    <fields>                      
+                        <expose translate="label">                        
+                            <label>Expose</label>
+                            <comment><![CDATA[<a href="http://flowplayer.org/tools/expose.html" target="_blank">Documentation and Demos</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>0</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </expose>                                                
+                    </fields>                        
+                </jquerytools_expose>
+                
+                <jquerytools_flashembed translate="label">
+                    <label>jQuery-Tools FLASHEMBED</label>
+                    <comment><![CDATA[<a href="http://flowplayer.org/tools/index.html" target="_blank"><img src="http://www.mxperts.de/jquery_tools_flashembed.jpg"></a>]]></comment>                    
+                    <frontend_type>text</frontend_type>
+                    <sort_order>15</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                    
+                    <fields>                      
+                        <flashembed translate="label">                        
+                            <label>Flashembed</label>
+                            <comment><![CDATA[<a href="http://flowplayer.org/tools/flashembed.html" target="_blank">Documentation and Demos</a>]]></comment>                                                                                    
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>0</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </flashembed>                                                
+                    </fields>                        
+                </jquerytools_flashembed>                                                                                                                     
+                
+                
+                
+                
+                <flowplayer translate="label">
+                    <label>Flowplayer Settings</label>
+                    <comment><![CDATA[<a href="http://flowplayer.org/index.html" target="_blank"><img src="http://www.mxperts.de/flowplayer.jpg"></a>]]></comment>                    
+                    <frontend_type>text</frontend_type>
+                    <sort_order>8</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                    
+                    <fields>                                         
+                        <flowplayer_active translate="label">                        
+                            <label>Flowplayer Enabled</label>
+                            <comment><![CDATA[<b>enable</b> or <b>disable</b> Flowplayer.]]></comment>                                                        
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>0</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </flowplayer_active>
+                        
+                        <flowplayer_minified translate="label">                        
+                            <label>Minified and Gzipped</label>
+                            <comment><![CDATA[Enable it for <strong>PRODUCTION</strong>]]></comment>                                                        
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>1</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </flowplayer_minified>  
+                        
+                        
+                        <flowplayer_controlbar translate="label">                        
+                            <label>Controlbar plugin</label>                                                        
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>2</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </flowplayer_controlbar>
+                        
+                        <flowplayer_playlist translate="label">                        
+                            <label>Playlist plugin</label>                                                        
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>3</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </flowplayer_playlist>
+                        
+                        <flowplayer_embed translate="label">                        
+                            <label>Embedding plugin</label>                                                        
+                            <frontend_type>select</frontend_type>                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                            
+                            <sort_order>4</sort_order>                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </flowplayer_embed>                        
+                        
+                                                                                     
+                    </fields>
+                </flowplayer>
+                
+                
+            </groups>
+            
+        </jquerytools>
+        
+        
+        
+        
+    </sections>
+    
+</config>

@@ -1,11 +1,11 @@
 <?php
 /**
  * Manage Customer Attribute grid block
- * 
+ *
  * @category    Clarion
  * @package     Clarion_Customerattribute
  * @author      Clarion Magento Team
- * 
+ *
  */
 class Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
@@ -16,27 +16,27 @@ class Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Grid extends M
          * If you’re using multiple grids in a page then id needs to be unique.
          */
         $this->setId('CustomerattributeGrid');
-        
+
         /**
-         * This tells which sorting column to use in our grid. Which column 
+         * This tells which sorting column to use in our grid. Which column
          * should be used for default sorting
          */
         $this->setDefaultSort('attribute_code');
-        
+
         /**
          * The default sorting order, ascending or descending
          */
         $this->setDefaultDir('ASC');
-        
+
         /**
-         * this basically sets your grid operations in session. Example, if we 
-         * were on page2 of grid or we had searched something on grid when 
-         * refreshing or coming back to the page, the grid operations will 
-         * still be there. It won’t revert back to its default form. 
+         * this basically sets your grid operations in session. Example, if we
+         * were on page2 of grid or we had searched something on grid when
+         * refreshing or coming back to the page, the grid operations will
+         * still be there. It won’t revert back to its default form.
          */
        // $this->setSaveParametersInSession(true);
     }
-    
+
     /**
      * Prepare customer attributes grid collection object
      *
@@ -50,7 +50,7 @@ class Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Grid extends M
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
-    
+
     /**
      * Prepare default grid column
      *
@@ -61,24 +61,24 @@ class Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Grid extends M
        /**
         * ‘id’ an unique id for column
         * ‘header’ is the name of the column
-        * ‘index’ is the field from our collection. This ‘id’ column needs to be 
+        * ‘index’ is the field from our collection. This ‘id’ column needs to be
         * present in our collection’s models.
         */
-        
+
         $yesno = Mage::getModel('adminhtml/system_config_source_yesno')->toArray();
-        
+
         $this->addColumn('attribute_code', array(
             'header'=>Mage::helper('clarion_customerattribute')->__('Attribute Code'),
             'sortable'=>true,
             'index'=>'attribute_code'
         ));
-		
+
         $this->addColumn('frontend_label', array(
             'header'=>Mage::helper('clarion_customerattribute')->__('Attribute Label'),
             'sortable'=>true,
             'index'=>'frontend_label'
         ));
-		
+
         $this->addColumn('is_required', array(
             'header'=>Mage::helper('clarion_customerattribute')->__('Required'),
             'sortable'=>true,
@@ -87,7 +87,7 @@ class Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Grid extends M
             'options' => $yesno,
             'align' => 'center',
         ));
-        
+
         $this->addColumn('is_user_defined', array(
             'header'=>Mage::helper('eav')->__('System'),
             'sortable'=>true,
@@ -99,7 +99,7 @@ class Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Grid extends M
                 '1' => Mage::helper('eav')->__('No'),    // intended reverted use
             ),
         ));
-        
+
        $this->addColumn('is_visible', array(
             'header'    => Mage::helper('clarion_customerattribute')->__('Visible on Frontend'),
             'index'     => 'is_visible',
@@ -107,14 +107,14 @@ class Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Grid extends M
             'type'      => 'options',
             'options'    => $yesno,
         ));
-         
+
          $this->addColumn('sort_order', array(
             'header'=>Mage::helper('clarion_customerattribute')->__('Sort Order'),
             'sortable'=>true,
             'width'=>'100px',
             'index'=>'sort_order'
         ));
-         
+
         /**
          * Adding Different Options To Grid Rows
          */
@@ -135,14 +135,14 @@ class Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Grid extends M
             'index'     => 'stores',
             'is_system' => true,
        ));
-        
+
         return parent::_prepareColumns();
     }
-    
+
     /**
-     * Row click url. 
+     * Row click url.
      * when user click on any rows of the grid it goes to a specific URL.
-     * URL is of the editAction of your controller and it passed the row’s id as a parameter. 
+     * URL is of the editAction of your controller and it passed the row’s id as a parameter.
      * @param object $row Data row object
      * @return string
      */

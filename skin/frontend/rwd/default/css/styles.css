@@ -1,3 +1,6 @@
+@import url("bootstrap.css");
+@import url("bootstrap.min.css");
+
 /**
  * Magento
  *
@@ -92,6 +95,9 @@ body {
   margin: 0;
 }
 
+html {
+  background-color: #D1FFFF;
+}
 /* ==========================================================================
    Links
    ========================================================================== */
@@ -3138,7 +3144,7 @@ body {
  * ============================================ */
 .header-language-background {
   padding: 10px;
-  background-color: #3399cc;
+  background-color: #145368;
   text-transform: uppercase;
 }
 .header-language-background .header-language-container {
@@ -3345,7 +3351,7 @@ a.skip-link {
     padding: 0 15px 0 25px;
     border-bottom: 1px solid #cccccc;
     text-align: left;
-    color: #636363;
+    color: #B2E0F0;
     text-transform: uppercase;
     line-height: 30px;
   }
@@ -3414,6 +3420,7 @@ a.skip-link {
   .nav-primary {
     display: block;
     margin-top: 15px;
+    background-color: #145368;
   }
 }
 /* ============================================ *
@@ -3423,7 +3430,7 @@ a.skip-link {
   text-decoration: none;
   position: relative;
   display: block;
-  color: #636363;
+  color: #99B2CC;
   line-height: 30px;
   font-family: "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;
 }

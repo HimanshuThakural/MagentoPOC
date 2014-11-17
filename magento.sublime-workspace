@@ -1,0 +1,1146 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"J",
+				"JKT_LogProductUpdate"
+			],
+			[
+				"nexus",
+				"nexus-s"
+			],
+			[
+				"search",
+				"search_string"
+			],
+			[
+				"last",
+				"last_name"
+			],
+			[
+				"name",
+				"first_name"
+			],
+			[
+				"click",
+				"click_link"
+			],
+			[
+				"C",
+				"Create"
+			],
+			[
+				"fir",
+				"first_name"
+			],
+			[
+				"valid",
+				"valid_password"
+			],
+			[
+				"not",
+				"no_match_password"
+			],
+			[
+				"not_",
+				"not_blank_password"
+			],
+			[
+				"ad",
+				"Administrations"
+			],
+			[
+				"Test",
+				"Test"
+			],
+			[
+				"sea",
+				"search_end_date"
+			],
+			[
+				"sear",
+				"search_end_date"
+			],
+			[
+				"up",
+				"updated_at"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/code/community/SSTech/Profileimage/etc/system.xml",
+			"settings":
+			{
+				"buffer_size": 2733,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/design/adminhtml/default/default/etc/theme.xml",
+			"settings":
+			{
+				"buffer_size": 1047,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/design/adminhtml/default/default/layout/profileimage.xml",
+			"settings":
+			{
+				"buffer_size": 1731,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/code/community/SSTech/Profileimage/controllers/CustomerController.php",
+			"settings":
+			{
+				"buffer_size": 3724,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/code/community/Clarion/Customerattribute/controllers/Adminhtml/CustomerattributeController.php",
+			"settings":
+			{
+				"buffer_size": 14016,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/code/community/SSTech/Profileimage/controllers/Adminhtml/CustomerController.php",
+			"settings":
+			{
+				"buffer_size": 3002,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/code/community/SSTech/Profileimage/Block/Header/Profileimage.php",
+			"settings":
+			{
+				"buffer_size": 2420,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/design/frontend/rwd/default/template/customer/form/edit.phtml",
+			"settings":
+			{
+				"buffer_size": 6732,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/design/frontend/rwd/default/etc/widget.xml",
+			"settings":
+			{
+				"buffer_size": 6715,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/amit/register.phtml",
+			"settings":
+			{
+				"buffer_size": 19386,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/code/core/Mage/CatalogSearch/Block/Advanced/Form.php",
+			"settings":
+			{
+				"buffer_size": 9349,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/design/frontend/rwd/default/layout/profileimage.xml",
+			"settings":
+			{
+				"buffer_size": 1845,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/design/frontend/base/default/layout/sstech/profileimage.xml",
+			"settings":
+			{
+				"buffer_size": 1765,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "skin/frontend/rwd/default/css/madisonisland.css",
+			"settings":
+			{
+				"buffer_size": 7692,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "skin/frontend/rwd/default/css/styles.css",
+			"settings":
+			{
+				"buffer_size": 205661,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "skin/frontend/rwd/default/js/app.js",
+			"settings":
+			{
+				"buffer_size": 25822,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/design/frontend/rwd/default/layout/page.xml",
+			"settings":
+			{
+				"buffer_size": 13925,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/var/www/magento",
+		"/var/www/magento/app",
+		"/var/www/magento/skin",
+		"/var/www/magento/skin/frontend",
+		"/var/www/magento/skin/frontend/rwd",
+		"/var/www/magento/skin/frontend/rwd/default",
+		"/var/www/magento/skin/frontend/rwd/default/css",
+		"/var/www/magento/skin/frontend/rwd/default/js"
+	],
+	"file_history":
+	[
+		"/var/www/magento/app/design/frontend/rwd/default/layout/sstech/profileimage.xml",
+		"/var/www/magento/app/design/frontend/base/default/template/profileimage/widget/account.phtml",
+		"/var/www/magento/app/design/frontend/rwd/default/template/page/html/head_custom.phtml",
+		"/var/www/magento/app/design/frontend/rwd/default/layout/local.xml",
+		"/var/www/magento/app/design/frontend/rwd/default/template/profileimage/page/html/header.phtml",
+		"/var/www/magento/app/design/frontend/default/modern/layout/customer.xml",
+		"/var/www/magento/app/design/frontend/default/modern/etc/theme.xml",
+		"/var/www/magento/app/design/frontend/base/default/etc/theme.xml",
+		"/var/www/magento/app/design/frontend/base/default/layout/sstech/profileimage.xml",
+		"/var/www/magento/skin/frontend/rwd/default/js/app.js",
+		"/var/www/magento/skin/frontend/rwd/default/css/madisonisland.css",
+		"/var/www/magento/app/design/frontend/rwd/default/template/profileimage/widget/account.phtml",
+		"/var/www/magento/app/design/frontend/rwd/default/template/profileimage/header/profileimage.phtml",
+		"/var/www/magento/app/design/frontend/rwd/default/template/profileimage/customer/form.phtml",
+		"/var/www/magento/app/design/frontend/rwd/default/layout/user_surveys.xml",
+		"/var/www/magento/app/design/frontend/rwd/default/etc/theme.xml",
+		"/var/www/magento/app/design/frontend/default/modern/etc/widget.xml",
+		"/var/www/magento/app/design/frontend/rwd/default/template/customer/account/dashboard.phtml",
+		"/var/www/magento/app/code/community/SSTech/Profileimage/etc/widget.xml",
+		"/var/www/magento/app/code/community/SSTech/Profileimage/sql/profileimage_setup/install-0.1.0.php",
+		"/var/www/magento/app/code/community/SSTech/Profileimage/controllers/Adminhtml/CustomerController.php",
+		"/var/www/magento/app/code/community/SSTech/Profileimage/controllers/CustomerController.php",
+		"/var/www/magento/app/code/community/SSTech/Profileimage/Model/Profileimage.php",
+		"/var/www/magento/app/code/community/SSTech/Profileimage/Model/Config.php",
+		"/var/www/magento/app/code/community/SSTech/Profileimage/Helper/Data.php",
+		"/var/www/magento/app/code/core/Mage/Page/Block/Html/Header.php",
+		"/var/www/magento/app/design/frontend/rwd/default/template/page/html/header.phtml",
+		"/var/www/magento/app/design/frontend/rwd/default/template/customer/form/mini.login.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/layout/profileimage.xml",
+		"/var/www/magento/app/code/community/SSTech/Profileimage/etc/config.xml",
+		"/var/www/magento/app/code/community/SSTech/Profileimage/Block/Widget/Upload.php",
+		"/var/www/magento/app/code/community/SSTech/Profileimage/Block/Header/Profileimage.php",
+		"/var/www/magento/app/etc/modules/SSTech_Profileimage.xml",
+		"/var/www/magento/app/design/frontend/rwd/default/template/page/html/topmenu/renderer.phtml",
+		"/var/www/magento/app/design/frontend/rwd/default/template/page/html/topmenu.phtml",
+		"/var/www/magento/app/design/frontend/rwd/default/template/page/template/links.phtml",
+		"/var/www/magento/app/design/frontend/rwd/default/template/page/2columns-left.phtml",
+		"/var/www/magento/app/design/frontend/rwd/default/layout/customer.xml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/profileimage/admin/form.phtml",
+		"/var/www/magento/app/code/community/SSTech/Profileimage/etc/system.xml",
+		"/var/www/magento/app/design/frontend/base/default/etc/widget.xml",
+		"/var/www/magento/app/design/install/default/default/template/page.phtml",
+		"/var/www/magento/app/design/install/default/default/layout/main.xml",
+		"/var/www/magento/app/design/install/default/default/etc/theme.xml",
+		"/var/www/magento/app/etc/config.xml",
+		"/var/www/magento/app/design/frontend/default/modern/template/page/3columns.phtml",
+		"/var/www/magento/app/design/frontend/default/modern/template/page/html/header.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/etc/theme.xml",
+		"/var/www/magento/app/design/adminhtml/default/default/layout/sstech/profileimage.xml",
+		"/var/www/magento/app/design/frontend/rwd/default/etc/widget.xml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/profileimage/customer/form.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/layout/customer.xml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/customer/tab/cart.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/customer/tab/view/sales.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/customer/tab/view.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/customer/edit/tab/view/grid/item.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/customer/edit/tab/account/form/renderer/group.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/customer/edit/js.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/customer/online.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/profileimage/widget/account.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/profileimage/page/html/header.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/profileimage/header/profileimage.phtml",
+		"/var/www/magento/app/design/frontend/default/default/etc/widget.xml",
+		"/var/www/magento/app/design/frontend/default/default/etc/theme.xml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/media/uploader.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/media/editor.phtml",
+		"/var/www/magento/app/code/community/SSTech/Profileimage/Model/Observer.php",
+		"/var/www/magento/app/code/community/Clarion/Customerattribute/Block/Adminhtml/Customerattribute.php",
+		"/var/www/magento/app/code/community/Clarion/Customerattribute/Block/Adminhtml/Customerattribute/Edit/Tabs.php",
+		"/var/www/magento/app/code/community/Clarion/Customerattribute/Block/Adminhtml/Customerattribute/Edit/Form.php",
+		"/var/www/magento/app/code/community/Clarion/Customerattribute/Block/Adminhtml/Customerattribute/Edit/Tab/Main.php",
+		"/var/www/magento/app/design/adminhtml/default/default/template/clarion_customerattribute/attribute/js.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/clarion_customerattribute/attribute/options.phtml",
+		"/var/www/magento/app/design/frontend/base/default/template/clarion/customerattribute/form/edit.phtml",
+		"/var/www/magento/app/design/frontend/base/default/template/clarion/customerattribute/form/register.phtml",
+		"/var/www/magento/skin/frontend/base/default/css/widgets.css",
+		"/var/www/magento/app/design/adminhtml/default/default/layout/clarion_customerattribute.xml",
+		"/var/www/magento/app/design/frontend/base/default/layout/clarion_customerattribute.xml",
+		"/var/www/magento/app/design/frontend/rwd/default/template/customer/form/edit.phtml",
+		"/var/www/magento/app/design/adminhtml/default/default/template/clarion_customerattribute/attribute/edit/js.phtml",
+		"/var/www/magento/app/code/community/Clarion/Customerattribute/Block/Adminhtml/Customerattribute/Edit/Options/Abstract.php",
+		"/var/www/magento/app/code/community/Clarion/Customerattribute/Block/Adminhtml/Customerattribute/Edit/Main/Abstract.php",
+		"/var/www/magento/app/code/community/Clarion/Customerattribute/Block/Adminhtml/Customerattribute/Grid.php",
+		"/var/www/magento/app/code/community/Clarion/Customerattribute/Block/Adminhtml/Customerattribute/Edit.php",
+		"/var/www/magento/app/code/community/Clarion/Customerattribute/Block/Adminhtml/Customerattribute/Edit/Tab/Options.php",
+		"/var/www/magento/app/code/community/User/Surveys/Block/Adminhtml/Surveys/Edit/Tab/Main.php",
+		"/var/www/magento/app/design/frontend/rwd/default/template/usersurveys/surveys/item.phtml",
+		"/var/www/magento/app/code/community/User/Surveys/controllers/IndexController.php",
+		"/var/www/magento/app/code/community/Clarion/Customerattribute/controllers/Adminhtml/CustomerattributeController.php",
+		"/var/www/magento/app/code/community/Clarion/Customerattribute/etc/config.xml",
+		"/var/www/magento/app/code/community/User/Surveys/Block/Adminhtml/Surveys.php",
+		"/var/www/magento/app/code/community/User/Surveys/etc/config.xml",
+		"/var/www/magento/app/code/core/Mage/Review/Model/Review/Status.php",
+		"/var/www/magento/app/code/community/User/Surveys/Block/Adminhtml/Surveys/Grid.php",
+		"/var/www/magento/app/design/frontend/rwd/default/template/usersurveys/surveys/list.phtml",
+		"/var/www/magento/app/design/frontend/rwd/default/template/usersurveys/surveys/form.php",
+		"/var/www/magento/app/design/frontend/base/default/template/easylife_customform/form.phtml",
+		"/var/www/magento/app/code/community/Clarion/Customerattribute/Model/Customerattribute.php",
+		"/var/www/magento/app/code/community/User/Surveys/Block/Item.php",
+		"/var/www/magento/app/code/community/User/Surveys/Block/Adminhtml/Surveys/Edit/Form.php",
+		"/var/www/magento/app/code/community/User/Surveys/Block/Adminhtml/Surveys/Edit/Form/Element/Image.php",
+		"/var/www/magento/app/code/community/User/Surveys/Block/Adminhtml/Surveys/Edit.php",
+		"/var/www/magento/app/code/community/User/Surveys/sql/user_surveys_setup/install-1.0.1.php",
+		"/var/www/magento/app/design/frontend/rwd/default/template/contacts/form.phtml",
+		"/var/www/magento/app/design/frontend/rwd/default/layout/contacts.xml",
+		"/var/www/magento/app/design/adminhtml/default/default/layout/user_surveys.xml",
+		"/var/www/magento/app/code/core/Mage/Contacts/controllers/IndexController.php",
+		"/var/www/magento/app/design/frontend/rwd/default/template/usersurveys/surveys/insert.php",
+		"/var/www/magento/app/code/community/Social/Events/sql/social_events_setup/install-1.0.1.php",
+		"/var/www/magento/app/etc/modules/Easylife_Customform.xml",
+		"/var/www/magento/app/design/frontend/my_interface/my_theme/template/contacts/form.phtml",
+		"/var/www/magento/app/code/local/Easylife/Customform/Block/Form.php",
+		"/var/www/magento/app/code/community/User/Surveys/controllers/Adminhtml/SurveysController.php",
+		"/var/www/magento/app/code/community/User/Surveys/Model/Surveys.php",
+		"/var/www/magento/app/code/community/User/Surveys/Model/Observer.php",
+		"/var/www/magento/app/code/community/User/Surveys/Model/Resource/Surveys.php",
+		"/var/www/magento/app/code/community/User/Surveys/Block/Adminhtml/Surveys/Edit/Tabs.php",
+		"/var/www/magento/app/code/community/User/Surveys/Model/Resource/Surveys/Collection.php",
+		"/var/www/magento/app/code/community/User/Surveys/Block/Adminhtml/Surveys/Edit/Tab/Image.php",
+		"/var/www/magento/app/code/local/Survey/UserSurvey/etc/config.xml",
+		"/var/www/magento/app/code/community/VladimirPopov/WebForms/etc/config.xml",
+		"/var/www/magento/app/code/community/User/Surveys/Block/List.php",
+		"/var/www/magento/app/code/local/Easylife/Customform/etc/config.xml",
+		"/home/amit/survey/rwd/default/template/usersurveys/surveys/item.phtml",
+		"/var/www/magento/lib/Varien/Autoload.php",
+		"/var/www/magento/app/code/local/Easylife/Customform/Model/Webforms/Template.php",
+		"/var/www/magento/var/package/CustomForm-2.4.0.4.xml",
+		"/var/www/magento/app/design/adminhtml/default/default/layout/customform.xml"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/var/www/magento",
+			"/var/www/magento/",
+			"/var/www/magento",
+			"/home/amit/Rails_Project/qtrack_rails/webapp/app"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"page.css",
+			"page.cc",
+			"addcss",
+			"addc",
+			" method=\"addCss\"",
+			"addcss",
+			"<addcss",
+			"<addCss",
+			"addCss",
+			"contacts",
+			"escription",
+			"VladimirPopov_WebForms",
+			"webforms",
+			"VladimirPopov_WebForms",
+			"Webforms",
+			"VladimirPopov_WebForms",
+			"menu",
+			"onclick",
+			"success.phtml",
+			"success",
+			"frontend",
+			"adtrak_arrangesurvey",
+			"adtrakArrangeSurvey_index_index",
+			"<adtrakArrangeSurvey_index_index>",
+			"models",
+			"JKT_logproductupdate",
+			"SmashingMagazine",
+			"image",
+			"})\n",
+			"shoppingcartControllers",
+			"container",
+			" /^",
+			"$/",
+			" /^",
+			"debugger",
+			"end",
+			"$/",
+			" /^",
+			"debugger",
+			"sleep",
+			"debugger",
+			"delete",
+			"true",
+			"locations",
+			"34.0724577",
+			"4577",
+			"34.072",
+			"editCompanyValidations",
+			"/^",
+			"$/",
+			"/^",
+			"they",
+			"You are not authorized to",
+			"json",
+			"all",
+			"nameas",
+			"user_username",
+			"visit",
+			"        ",
+			"end",
+			"to",
+			"end",
+			"return",
+			"\n    ",
+			"respond_to do |format|"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"surveys",
+			"Easylife_Customform",
+			"usersurvey",
+			"Survey_UserSurvey"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/code/community/SSTech/Profileimage/etc/system.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2733,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 357.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/design/adminhtml/default/default/etc/theme.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1047,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1017,
+								1017
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 51.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/design/adminhtml/default/default/layout/profileimage.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1731,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								668,
+								668
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/code/community/SSTech/Profileimage/controllers/CustomerController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3724,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								568,
+								568
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 204.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/code/community/Clarion/Customerattribute/controllers/Adminhtml/CustomerattributeController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14016,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2289,
+								2289
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 621.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/code/community/SSTech/Profileimage/controllers/Adminhtml/CustomerController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3002,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								508,
+								508
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 221.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/code/community/SSTech/Profileimage/Block/Header/Profileimage.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2420,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/design/frontend/rwd/default/template/customer/form/edit.phtml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6732,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 204.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/design/frontend/rwd/default/etc/widget.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6715,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 731.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/home/amit/register.phtml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19386,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10588,
+								10588
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 357.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/code/core/Mage/CatalogSearch/Block/Advanced/Form.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9349,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3799,
+								3799
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1420.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "app/design/frontend/rwd/default/layout/profileimage.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1845,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1196,
+								1196
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 204.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "app/design/frontend/base/default/layout/sstech/profileimage.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1765,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "skin/frontend/rwd/default/css/madisonisland.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7692,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2513,
+								2513
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 622.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "skin/frontend/rwd/default/css/styles.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 205661,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8007.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "skin/frontend/rwd/default/js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25822,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3621.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "app/design/frontend/rwd/default/layout/page.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13925,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10641,
+								10641
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2946.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "magento.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"user_create.feature",
+				"features/user_create.feature"
+			],
+			[
+				"index.html.erb",
+				"app/views/maps/index.html.erb"
+			],
+			[
+				"en.y",
+				"config/locales/en.yml"
+			],
+			[
+				"super_admin_profile_specs.rb",
+				"spec/features/super_admin_profile_specs.rb"
+			],
+			[
+				"company.en.yml",
+				"config/locales/company.en.yml"
+			],
+			[
+				"user_sig",
+				"spec/features/user_sign_in_spec.rb"
+			],
+			[
+				"user_si",
+				"features/user_sign_in.feature"
+			],
+			[
+				"_company.html.erb",
+				"app/views/companies/_company.html.erb"
+			],
+			[
+				"/_company.html.erb",
+				"app/views/companies/_company.html.erb"
+			],
+			[
+				"admin_company_page_specs.rb",
+				"spec/features/admin_company_page_specs.rb"
+			],
+			[
+				"application_controller.rb",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"companies_controller.rb",
+				"app/controllers/companies_controller.rb"
+			],
+			[
+				"user.rb",
+				"app/models/user.rb"
+			],
+			[
+				"spec_helper.rb",
+				"spec/spec_helper.rb"
+			],
+			[
+				"product",
+				"config/deploy/production.rb"
+			],
+			[
+				"deve",
+				"config/environments/development.rb"
+			],
+			[
+				"user_con",
+				"spec/controllers/users_controller_spec.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/rails1_files/rails1.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 252.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

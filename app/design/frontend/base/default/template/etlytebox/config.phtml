@@ -1,0 +1,59 @@
+<?php
+/**
+ * NOTICE OF LICENSE
+ *
+ * You may not sell, sub-license, rent or lease
+ * any portion of the Software or Documentation to anyone.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   ET
+ * @package    ET_Lytebox
+ * @copyright  Copyright (c) 2012 ET Web Solutions (http://etwebsolutions.com)
+ * @contacts   support@etwebsolutions.com
+ * @license    http://shop.etwebsolutions.com/etws-license-free-v1/   ETWS Free License (EFL1)
+ */
+
+$_lyghtboxConfig = Mage::getStoreConfig('lytebox/general');
+$_lyghtboxConfig += Mage::getStoreConfig('lytebox/design');
+$_lyghtboxConfig += Mage::getStoreConfig('lytebox/slideshow');
+?>
+
+<script type="text/javascript">
+    function initLytebox() {
+
+        myLytebox = new LyteBox({
+            theme:'<?php echo $_lyghtboxConfig['themeName'] ?>',
+            maxOpacity: <?php echo $_lyghtboxConfig['maxOpacity'] ?>,
+            doAnimations: <?php echo (($_lyghtboxConfig['animate'] > 0) ? "true" : "false"); ?>,
+            resizeSpeed: <?php echo $_lyghtboxConfig['resizeSpeed'] ?>,
+            borderSize: <?php echo $_lyghtboxConfig['borderSize'] ?>,
+            labelImage:'<?php echo $_lyghtboxConfig['labelImage'] ?>',
+            labelOf:'<?php echo $_lyghtboxConfig['labelOf'] ?>',
+            slideInterval: <?php echo $_lyghtboxConfig['slideInterval'] ?>,
+            showNavigation: <?php echo (($_lyghtboxConfig['showNavigation'] > 0) ? "true" : "false"); ?>,
+            showClose: <?php echo (($_lyghtboxConfig['showClose'] > 0) ? "true" : "false"); ?>,
+            showDetails: <?php echo (($_lyghtboxConfig['showDetails'] > 0) ? "true" : "false"); ?>,
+            showPlayPause: <?php echo (($_lyghtboxConfig['showPlayPause'] > 0) ? "true" : "false"); ?>,
+            autoEnd: <?php echo (($_lyghtboxConfig['autoEnd'] > 0) ? "true" : "false"); ?>,
+            pauseOnNextClick: <?php echo (($_lyghtboxConfig['pauseOnNextClick'] > 0) ? "true" : "false"); ?>,
+            pauseOnPrevClick: <?php echo (($_lyghtboxConfig['pauseOnPrevClick'] > 0) ? "true" : "false"); ?>
+
+        });
+    }
+
+
+    if (window.addEventListener) {
+        window.addEventListener("load", initLytebox, false);
+    } else if (window.attachEvent) {
+        window.attachEvent("onload", initLytebox);
+    } else {
+        window.onload = function () {
+            initLytebox();
+        }
+    }
+
+</script>

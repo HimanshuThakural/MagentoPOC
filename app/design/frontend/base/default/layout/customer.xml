@@ -246,7 +246,7 @@ Customer account home dashboard layout
 -->
 
     <customer_account_index translate="label">
-        <label>Customer My Account Dashboard</label>
+        <label>Customer Dashboard</label>
         <update handle="customer_account"/>
         <!-- Mage_Customer -->
         <reference name="root">

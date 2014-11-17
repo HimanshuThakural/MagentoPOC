@@ -1,0 +1,27 @@
+<?php 
+ /*
+        @params 
+        @author Severtek
+        @comments to show the profile image under my account
+    */
+?>
+<?php if(Mage::helper('profileimage')->isShowUploadWidget()):?>
+<script type="text/javascript">
+var profileimageTemplate = '<div class="fieldset">'
+                            +'<h2 class="legend"><?php echo $this->getData('title')?></h2>'
+                            +'<ul class="form-list">'
+                            +'<li class="wide">'
+                            +'<div class="input-box">'
+                            +'<input type="file" name="profileimage-file" id="upload-profileimage" title="<?php echo $this->__('Customer Profileimage') ?>"/>'
+                            +'</div>'
+                            +'</li>'    
+                            +'</ul>' 
+                            +'</div>';
+
+    $j = jQuery.noConflict();
+    $j('#form-validate').attr('enctype', 'multipart/form-data');
+    if($j('#form-validate > .fieldset:nth-child(2)')){
+        $j('#form-validate > .fieldset:nth-child(2)').after(profileimageTemplate);
+    }
+</script>
+<?php endif?>

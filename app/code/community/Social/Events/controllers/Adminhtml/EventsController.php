@@ -133,6 +133,7 @@ class Social_Events_Adminhtml_EventsController extends Mage_Adminhtml_Controller
 
             // if events item exists, try to load it
             $eventsId = $this->getRequest()->getParam('events_id');
+            
             if ($eventsId) {
                 $model->load($eventsId);
             }

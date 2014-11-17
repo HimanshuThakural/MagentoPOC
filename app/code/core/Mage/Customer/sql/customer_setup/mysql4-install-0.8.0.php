@@ -244,5 +244,18 @@ CREATE TABLE `{$installer->getTable('customer_group')}` (
 
 INSERT INTO `{$installer->getTable('customer_group')}` VALUES(0, 'NOT LOGGED IN', 3), (1, 'General', 3), (2, 'Wholesale', 3), (3, 'Retailer', 3);
 ");
+ /* $installer->addAttribute('customer','occupation',array(
+ 	'label'   =>'Occupation',
+ 	'visible' =>1,
+ 	'required' =>0,
+ 	'position' =>1,
+ 	'sort_order' =>90,
+ )); */
+
 $installer->endSetup();
+/* $customerattribute = Mage::getModel('customer/attribute')->loadByCode('customer','occupation');
+$forms = array('customer_account_edit','customer_account_create','adminhtml_customer','checkout_register');
+$customerattribute -> setData('used_in_forms',$forms);
+$customerattribute -> save(); */
+
 $installer->installEntities();

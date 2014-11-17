@@ -113,6 +113,7 @@ Default layout, loads most of the pages
         </block>
 
         <block type="core/profiler" output="toHtml" name="core_profiler"/>
+
     </default>
 
     <print translate="label" module="page">

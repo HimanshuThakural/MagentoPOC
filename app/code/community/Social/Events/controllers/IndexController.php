@@ -71,11 +71,9 @@ class Social_Events_IndexController extends Mage_Core_Controller_Front_Action
         /** @var $model Social_Events_Model_Events */
         $model = Mage::getModel('social_events/events');
         $model->load($eventsId);
-
         if (!$model->getId()) {
             return $this->_forward('noRoute');
         }
-
         Mage::register('events_item', $model);
 
         Mage::dispatchEvent('before_events_item_display', array('events_item' => $model));

@@ -1,0 +1,20 @@
+<?php
+public function createPersonAction()
+	{
+	$data = $this->getRequest()->getPost();
+	$session = Mage::getSingleton('core/session');
+	$person = Mage::getModel('lesson14/lesson14');
+	$person->setData('name', $data['name']);
+	$person->setData('birthday', $data['birthday']);
+	$person->setData('gender', $data['gender']);
+	$person->setData('address', $data['address']);
+	// $person->setData($data);
+	try{
+	$person->save();
+	$session->addSuccess('Add a person sucessfully');
+	}catch(Exception $e){
+	$session->addError('Add Error');
+	}
+	$this->_redirect('lesson14/index/index');
+
+?>

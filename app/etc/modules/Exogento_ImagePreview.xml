@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Exogento_ImagePreview>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+            	<Mxperts_Jquery />
+            </depends>
+        </Exogento_ImagePreview>
+    </modules>
+</config>

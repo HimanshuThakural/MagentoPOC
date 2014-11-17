@@ -1,0 +1,170 @@
+<?php
+/**
+ * NOTICE OF LICENSE
+ *
+ * You may not sell, sub-license, rent or lease
+ * any portion of the Software or Documentation to anyone.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   ET
+ * @package    ET_Lytebox
+ * @copyright  Copyright (c) 2012 ET Web Solutions (http://etwebsolutions.com)
+ * @contacts   support@etwebsolutions.com
+ * @license    http://shop.etwebsolutions.com/etws-license-free-v1/   ETWS Free License (EFL1)
+ */
+
+/**
+ * Product media data template
+ *
+ * @see Mage_Catalog_Block_Product_View_Media
+ */
+
+$_product = $this->getProduct();
+$_helper = $this->helper('catalog/output');
+
+$_lyghtboxConfig = Mage::getStoreConfig('lytebox/general');
+$_lyghtboxConfig += Mage::getStoreConfig('lytebox/design');
+$_lyghtboxConfig += Mage::getStoreConfig('lytebox/slideshow');
+
+/* Main Image Size */
+if (strstr($_lyghtboxConfig['mainImageSize'], '_')) {
+    $mainImageSize = explode('_', $_lyghtboxConfig['mainImageSize'], 2);
+} else {
+    $mainImageSize = array(265, 265);
+}
+/* Popup Image Size */
+$popupImageSize = explode('_', $_lyghtboxConfig['popupImageSize'], 2);
+if (count($popupImageSize) == 1) {
+    if (!((int)$popupImageSize[0] > 0)) $popupImageSize = false;
+} else if (count($popupImageSize) != 2) $popupImageSize = false;
+
+/* Additional Images Size */
+if (strstr($_lyghtboxConfig['additionalImageSize'], '_')) {
+    $additionalImageSize = explode('_', $_lyghtboxConfig['additionalImageSize'], 2);
+} else {
+    $additionalImageSize = array(60, 60);
+}
+
+$image = $this->helper('catalog/image')->init($_product, 'image');
+if ($popupImageSize[0] > 0) {
+    $image = $this->helper('catalog/image')->init($_product, 'image')->resize($popupImageSize[0], $popupImageSize[1]);
+}
+?>
+
+<?php if (!$_lyghtboxConfig['defaultzoom']): ?>
+
+<?php
+    $maintitle = $this->htmlEscape($_product->getImageLabel());
+    if (($_lyghtboxConfig['productName'] != 0) && empty($maintitle)):
+        $maintitle = $_product->getName();
+    endif;
+    ?>
+
+<a href="<?php echo $image; ?>" rel="lytebox[rotation]" title="<?php echo $maintitle;?>" onclick="return false;"><img
+    src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($mainImageSize[0], $mainImageSize[1]); ?>"
+    width="<?php echo $mainImageSize[0];?>" height="<?php echo $mainImageSize[1];?>"
+    alt="<?php echo $this->htmlEscape($_product->getImageLabel());?>"/></a>
+
+<?php else: ?>
+<?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
+    <p class="product-image product-image-zoom">
+        <?php
+        $_img = '<img id="image" src="' . $this->helper('catalog/image')->init($_product, 'image') . '" alt="' . $this->htmlEscape($this->getImageLabel()) . '" title="' . $this->htmlEscape($this->getImageLabel()) . '" />';
+        echo $_helper->productAttribute($_product, $_img, 'image');
+        ?>
+    </p>
+
+    <p class="zoom-notice"
+       id="track_hint"><?php echo $this->__('Double click on above image to view full picture') ?></p>
+    <div class="zoom">
+        <img id="zoom_out" src="<?php echo $this->getSkinUrl('images/slider_btn_zoom_out.gif') ?>"
+             alt="<?php echo $this->__('Zoom Out') ?>" title="<?php echo $this->__('Zoom Out') ?>"
+             class="btn-zoom-out"/>
+
+        <div id="track">
+            <div id="handle"></div>
+        </div>
+        <img id="zoom_in" src="<?php echo $this->getSkinUrl('images/slider_btn_zoom_in.gif') ?>"
+             alt="<?php echo $this->__('Zoom In') ?>" title="<?php echo $this->__('Zoom In') ?>" class="btn-zoom-in"/>
+    </div>
+    <script type="text/javascript">
+        //<![CDATA[
+        Event.observe(window, 'load', function () {
+            product_zoom = new Product.Zoom('image', 'track', 'handle', 'zoom_in', 'zoom_out', 'track_hint');
+        });
+        //]]>
+    </script>
+    <?php else: ?>
+    <p class="product-image">
+        <?php
+        $_img = '<img src="' . $this->helper('catalog/image')->init($_product, 'image')->resize(265) . '" alt="' . $this->htmlEscape($this->getImageLabel()) . '" title="' . $this->htmlEscape($this->getImageLabel()) . '" />';
+        echo $_helper->productAttribute($_product, $_img, 'image');
+        ?>
+    </p>
+    <?php endif; ?>
+<?php endif; ?>
+
+
+
+<?php if (count($this->getGalleryImages()) > 0): ?>
+<div class="more-views">
+    <h2><?php echo $this->__('More Views') ?></h2>
+    <ul>
+        <?php foreach ($this->getGalleryImages() as $_image): ?>
+        <?php
+        $subtitle = $this->htmlEscape($_image->getLabel());
+        if (($_lyghtboxConfig['productName'] != 0) && empty($subtitle)):
+            $subtitle = $_product->getName();
+        endif;
+
+        $imageUrl = $popupImageSize
+            ? (count($popupImageSize) == 2
+                ? ((string)Mage::helper('catalog/image')->init($_product, 'image', $_image->file)->resize($popupImageSize[0], $popupImageSize[1]))
+                : ((string)Mage::helper('catalog/image')->init($_product, 'image', $_image->file)->resize($popupImageSize[0]))
+            )
+            : ((string)Mage::helper('catalog/image')->init($_product, 'image', $_image->file));
+        ?>
+        <li>
+            <a href="<?php echo $imageUrl; ?>" rel="lytebox[rotation]" title="<?php echo $subtitle; ?>"
+               onclick="return false;"><img
+                src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($additionalImageSize[0], $additionalImageSize[1]); ?>"
+                width="<?php echo $additionalImageSize[0];?>" height="<?php echo $additionalImageSize[1];?>"
+                alt="<?php echo $subtitle; ?>"/></a>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>
+
+
+
+
+<script type="text/javascript">
+    function initLytebox() {
+
+        myLytebox = new LyteBox({
+            theme:'<?php echo $_lyghtboxConfig['themeName'] ?>',
+            maxOpacity: <?php echo $_lyghtboxConfig['maxOpacity'] ?>,
+            doAnimations: <?php echo (($_lyghtboxConfig['animate'] > 0) ? "true" : "false"); ?>,
+            resizeSpeed: <?php echo $_lyghtboxConfig['resizeSpeed'] ?>,
+            borderSize: <?php echo $_lyghtboxConfig['borderSize'] ?>,
+            labelImage:'<?php echo $_lyghtboxConfig['labelImage'] ?>',
+            labelOf:'<?php echo $_lyghtboxConfig['labelOf'] ?>'
+        });
+    }
+
+
+    if (window.addEventListener) {
+        window.addEventListener("load", initLytebox, false);
+    } else if (window.attachEvent) {
+        window.attachEvent("onload", initLytebox);
+    } else {
+        window.onload = function () {
+            initLytebox();
+        }
+    }
+</script>

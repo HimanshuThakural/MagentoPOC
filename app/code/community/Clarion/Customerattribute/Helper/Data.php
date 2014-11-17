@@ -1,13 +1,24 @@
 <?php
 /**
  * Manage Customer Attribute data helper
- * 
+ *
  * @category    Clarion
  * @package     Clarion_Customerattribute
  * @author      Clarion Magento Team
  */
 class Clarion_Customerattribute_Helper_Data extends Mage_Core_Helper_Abstract
 {
+    /**
+     * My custom code for Profileimage
+     */
+    /*const XML_PATH_UPLOAD_WIDGET_ENABLED = 'customer/profileimage_widget/enabled';
+    public function isShowUploadWidget(){
+        return Mage::app()->getStore()->getConfig(self::XML_PATH_UPLOAD_WIDGET_ENABLED);
+    }
+    public function _getProfileimage(){
+        return Mage::getSingleton('profileimage/profileimage');
+    }*/
+
     /**
      * XML path to input types validator data in config
      */
@@ -122,7 +133,7 @@ class Clarion_Customerattribute_Helper_Data extends Mage_Core_Helper_Abstract
     {
         return Mage::getStoreConfig(self::XML_PATH_VALIDATOR_DATA_INPUT_TYPES);
     }
-    
+
     /**
      * Retrieve attribute hidden fields
      *

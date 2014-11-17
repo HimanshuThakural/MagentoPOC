@@ -1,2 +1,13 @@
+<<<<<<< HEAD
+
+/var/
+.buildpath
+.settings/
+media/
+downloader/
+=======
 /var
+>>>>>>> dfec2dfdef952b08d38e9c7fd4cb9a8333c5d854
 media/catalog/product/cache
+app/etc/local.xml
+

@@ -61,4 +61,31 @@
 
 <div class="buttons-set">
     <button type="button" class="button" title="<?php echo $this->__('Continue Shopping') ?>" onclick="window.location='<?php echo $this->getUrl() ?>'"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
+
+
+     <?php
+      $className = Mage::getConfig()->getBlockClassName('User_Surveys_Block_List');
+      $block = new $className();
+      $featuredId = $block->getItemUrl();
+    ?>
+
+	<button type="button" class="button" title="<?php echo $this->__('Customer Survey') ?>" href="<?php echo Mage::getBaseUrl().'surveys/index/featuredSurvey/id/'.$featuredId; ?>"><span><span><?php echo $this->__('Customer Survey') ?></span></span></button>
+
+
+<?php echo $this->getPager() ?>
+    <?php
+		$jsTiny = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS) . 'surveys/tinybox.js';
+		$jsMain = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS) . 'surveys/ajaxsurvey.js';
+		$cssMain = $this->getSkinUrl('css/ajaxsurvey.css');
+	?>
+    <link media="all" href="<?php echo $cssMain?>" type="text/css" rel="stylesheet">
+	<script src="<?php echo $jsTiny?>" type="text/javascript"></script>
+	<script src="<?php echo $jsMain?>" type="text/javascript"></script>
+	<script type="text/javascript">
+		var G_AJAXLOGIN_URL = "<?php echo Mage::getBaseUrl().'surveys/index/featuredSurvey/id/'.$featuredId;?>";
+		$$("button[href*=<?php echo Mage::getBaseUrl().'surveys/index/featuredSurvey/id/'.$featuredId;?>]").each(function(item) {
+		item.href='javascript:void(0)';
+		Event.observe(item, 'click', showloginbox);
+	});
+	</script>
 </div>

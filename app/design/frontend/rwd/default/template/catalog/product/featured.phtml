@@ -1,0 +1,49 @@
+<h3 align="center" ><b><?php echo $this->__('Products by Category') ?></b></h3>
+<?php $_productCollection=$this->getLoadedProductCollection() ?>
+<?php if(!$_productCollection->count()): ?>
+<div class="note-msg">
+    <?php echo $this->__('There are no products matching the selection. Please provide a category ID.') ?>
+</div>
+<?php else: ?>
+
+<?php // Grid Mode ?>
+
+
+  <div id="featured" class="jcarousel-skin-tango">
+
+<?php $_collectionSize = $_productCollection->count() ?>
+    <?php $i=0; foreach ($_productCollection as $_product): ?>
+        <?php if($i++%4==0): ?>
+
+
+                <?php endif ?>
+
+             <div class="col-md-4">
+                <a class="preview" rel="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>">
+                        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(400); ?>" width="400" height="400" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" />
+                </a>
+            
+                <h4 align="center">
+                    <a href="<?php echo $_product->getProductUrl() ?>" ><?php echo $this->htmlEscape($_product->getName()) ?>
+                    </a>
+                </h4>
+
+                <h4 align="center">
+                    <a href="<?php echo $_product->getProductUrl() ?>" >
+                        <?php echo $this->getPriceHtml($_product, true) ?>
+                    </a>
+                </h4>
+            </div>
+
+            <?php if ($i%4==0 && $i!=$_collectionSize): ?>
+
+            <?php endif ?>
+
+
+    <?php endforeach ?>
+
+
+</div>
+
+
+<?php endif; ?>

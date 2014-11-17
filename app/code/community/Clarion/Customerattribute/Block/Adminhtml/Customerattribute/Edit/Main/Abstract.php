@@ -65,6 +65,14 @@ abstract class  Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Edit
 
         $inputTypes = Mage::getModel('eav/adminhtml_system_config_source_inputtype')->toOptionArray();
 
+        /**
+         * My custom code for customer input types
+         */
+
+        $maxKey = max(array_keys($inputTypes))+1;
+        $inputImage[$maxKey] = array('value' => 'image', 'label' => 'Image');
+        $inputTypes = array_merge($inputTypes,$inputImage);
+
         $fieldset->addField('frontend_input', 'select', array(
             'name' => 'frontend_input',
             'label' => Mage::helper('eav')->__('Customer Input Type'),
@@ -104,7 +112,7 @@ abstract class  Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Edit
             'title' => Mage::helper('eav')->__('Default Value'),
             'value' => $attributeObject->getDefaultValue(),
         ));
-        
+
         $fieldset->addField('is_visible', 'select', array(
             'name' => 'is_visible',
             'label' => Mage::helper('eav')->__('Visible on Frontend'),
@@ -129,14 +137,14 @@ abstract class  Clarion_Customerattribute_Block_Adminhtml_Customerattribute_Edit
             'values' => $yesno,
         ));
 
-        
+
         $fieldset->addField('frontend_class', 'select', array(
             'name'  => 'frontend_class',
             'label' => Mage::helper('eav')->__('Input Validation'),
             'title' => Mage::helper('eav')->__('Input Validation'),
             'values'=> Mage::helper('clarion_customerattribute')->getFrontendClasses($attributeObject->getEntityType()->getEntityTypeCode())
         ));
-        
+
         if ($attributeObject->getId()) {
             $form->getElement('attribute_code')->setDisabled(1);
             $form->getElement('frontend_input')->setDisabled(1);

@@ -127,6 +127,7 @@ New customer registration
             <block type="core/template" name="optional_zip_countries" as="optional_zip_countries" template="directory/js/optional_zip_countries.phtml" />
         </reference>
         <reference name="root">
+            <!-- <block type="page/html" name="root" output="toHtml" template="page/2columns-left.phtml"/> -->
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>
         <reference name="content">

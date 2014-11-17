@@ -30,8 +30,23 @@
     <div class="add-to-cart">
         <?php if(!$_product->isGrouped()): ?>
         <div class="qty-wrapper">
-            <label for="qty"><?php echo $this->__('Qty:') ?></label>
+            <label for="qty"><?php echo $this->__('Quantity:') ?></label>
+
             <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+
+            <!-- for diplaying quantity in dropdown list 
+            
+
+            <select>
+            <?php $i = 1 ?>
+            <?php do { ?>
+            <option value="<?php echo $i?>">
+              <?php echo $i?>
+              <?php $i++ ?>
+            </option>
+            <?php } while ($i <= (int)Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product)->getQty()) ?></select>  -->
+        </div>
+
         </div>
         <?php endif; ?>
         <div class="add-to-cart-buttons">

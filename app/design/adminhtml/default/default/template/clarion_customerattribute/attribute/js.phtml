@@ -110,13 +110,13 @@ function bindAttributeInputType()
             */
             $('frontend_class').value = '';
             $('frontend_class').disabled = true;
-              
+
             break;
         case 'text':
             /*
             setRowVisibility('is_html_allowed_on_front', true);
             $('is_html_allowed_on_front').disabled = false;
-           
+
             if (!$('frontend_class').getAttribute('readonly')) {
                 $('frontend_class').disabled = false;
             }
@@ -186,6 +186,10 @@ function switchDefaultValueField()
             optionDefaultInputType = 'checkbox';
             break;
 
+        case 'image':
+            optionDefaultInputType = 'media_image';
+            break;
+
         case 'date':
             defaultValueDateVisibility = true;
             break;
@@ -199,7 +203,7 @@ function switchDefaultValueField()
             break;
 
         case 'media_image':
-            defaultValueTextVisibility = false;
+            defaultValueTextVisibility = true;
             break;
         case 'price':
             scopeVisibility = false;

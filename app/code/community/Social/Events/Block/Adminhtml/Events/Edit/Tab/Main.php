@@ -35,7 +35,7 @@ class Social_Events_Block_Adminhtml_Events_Edit_Tab_Main
     protected function _prepareForm()
     {
         $model = Mage::helper('social_events')->getEventsItemInstance();
-
+		
         /**
          * Checking if user have permissions to save information
          */

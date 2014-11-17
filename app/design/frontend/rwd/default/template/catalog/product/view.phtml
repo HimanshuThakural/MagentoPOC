@@ -64,6 +64,7 @@
                     <?php echo $this->getTierPriceHtml() ?>
                 </div>
 
+                <!-- Checks if product is in stock -->
                 <div class="extra-info">
                     <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
                     <?php echo $this->getChildHtml('product_type_availability'); ?>
