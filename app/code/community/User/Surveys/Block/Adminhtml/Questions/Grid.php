@@ -33,6 +33,8 @@ class User_Surveys_Block_Adminhtml_Questions_Grid extends Mage_Adminhtml_Block_W
     public function __construct()
     {   
         parent::__construct();
+        $this->setId('questionsGrid');
+        $this->setDefaultDir('DESC');
         $this->setSaveParametersInSession(true);
         $this->setUseAjax(true);
     }
@@ -45,9 +47,9 @@ class User_Surveys_Block_Adminhtml_Questions_Grid extends Mage_Adminhtml_Block_W
     protected function _prepareCollection()
     {
         $collection = Mage::getModel('user_surveys/questions')->getResourceCollection();
-
         $this->setCollection($collection);
-        return parent::_prepareCollection();
+         parent::_prepareCollection();
+         return $this;
     }
 
     /**
@@ -62,12 +64,15 @@ class User_Surveys_Block_Adminhtml_Questions_Grid extends Mage_Adminhtml_Block_W
             'header'    => Mage::helper('user_surveys')->__('ID #'),
             'width'     => '150px',
             'index'     => 'id',
+        	
         ));
 
         $this->addColumn('questions', array(
             'header'    => Mage::helper('user_surveys')->__('Question Name'),
             'index'     => 'questions',
+        	
         ));
+        
 
         return parent::_prepareColumns();
     }

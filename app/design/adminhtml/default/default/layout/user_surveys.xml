@@ -57,12 +57,6 @@
         </reference>     
     </adminhtml_surveys_edit>
     
-     <!-- <adminhtml_surveys_getcode>
-        <reference name="content">
-            <block type="user_surveys/adminhtml_surveys_link_form" name="get_code"/>
-        </reference>        
-    </adminhtml_surveys_getcode> -->
-
     <adminhtml_surveys_getcode>
         <reference name="content">
             <block type="user_surveys/adminhtml_surveys" template="usersurveys/form.phtml" name="get_code"/>
@@ -75,13 +69,6 @@
         </reference>        
      </adminhtml_surveys_view>
 
-    <!-- 
-    <adminhtml_surveys_view>
-        <reference name="content">
-            <block type="user_surveys/adminhtml_results_view_form" name="view"/>
-        </reference>        
-    </adminhtml_surveys_view>
- -->
      <adminhtml_questions_edit>
         <reference name="content">
             <block type="user_surveys/adminhtml_questions_edit" name="questions_edit"/>

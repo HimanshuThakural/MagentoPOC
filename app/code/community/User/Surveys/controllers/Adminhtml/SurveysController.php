@@ -319,8 +319,8 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 		$this->_title ( $this->__ ( 'View' ) )->_title ( $this->__ ( 'Surveys Feedback' ) );
 		
 		$id = $this->getRequest ()->getParam ( 'id' );
-		$model = Mage::getModel ( 'user_surveys/surveys' );
-		$model->load ( $id );
+	//	echo'<pre>';print($id);echo'</pre>';die('view id');
+		$model = Mage::getModel ( 'user_surveys/surveys' )->load ( $id );
 		
 		$formId = $model->getFormId ();
 		$userId = $model->getUserId ();

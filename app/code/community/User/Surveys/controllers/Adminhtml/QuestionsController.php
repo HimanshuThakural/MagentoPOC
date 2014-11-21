@@ -24,7 +24,6 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-/*Start by Atul Pathak*/
 class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controller_Action
 {
     protected function _initAction()
@@ -61,7 +60,19 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
         // same form is used to create and edit
         $this->_forward('edit');
     }
+    
+    /**
+     * Grid ajax action
+     */
+    public function gridAction()
+    {
+    	$this->loadLayout();
+    	$this->renderLayout();
+    }
 
+    /**
+     * Create edit form																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																										
+     */
     public function editAction()
     {   
         $this->_title($this->__('Surveys'))
@@ -163,8 +174,6 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
                 // init model and delete
                 /** @var $model User_Surveys_Model_Item */
 
-            	
-            	/*Start by Ankush Kumar*/
             	$collection = Mage::getModel('user_surveys/surveys')
             	->getCollection()
             	->addFieldToFilter('question_id', array('eq' => $id))
@@ -180,14 +189,12 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
             	
             	$model = Mage::getModel('user_surveys/questions');
             	$model->load($id);
-            	/*End by Ankush Kumar*/
             	
                 if (!$model->getId()) {
                     Mage::throwException(Mage::helper('user_surveys')->__('Unable to find Question'));
                 }
                 $model->delete();
 
-                // display success message
                 $this->_getSession()->addSuccess(
                     Mage::helper('user_surveys')->__('Question deleted Successfully.')
                 );
@@ -203,17 +210,6 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
         // go to grid
         $this->_redirect('*/*/');
     }
-
-
-    /**
-     * Grid ajax action
-     */
-    public function gridAction()
-    {
-        $this->loadLayout();
-        $this->renderLayout();
-    }  
-
     
 }
 /*End by Atul Pathak*/

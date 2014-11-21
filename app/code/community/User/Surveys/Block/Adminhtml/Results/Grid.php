@@ -32,10 +32,10 @@ class User_Surveys_Block_Adminhtml_Results_Grid extends Mage_Adminhtml_Block_Wid
     public function __construct()
     {
         parent::__construct();
+        $this->setId('results');
+        $this->setDefaultSort('id');
         $this->setSaveParametersInSession(true);
         $this->setUseAjax(true);
-        $this->setDefaultSort('id');
-        $this->setDefaultDir('ASC');
     }
 
     /**
@@ -46,8 +46,9 @@ class User_Surveys_Block_Adminhtml_Results_Grid extends Mage_Adminhtml_Block_Wid
     protected function _prepareCollection()
     {
    		$collection = Mage::registry('collection');
+   		
  	    $this->setCollection($collection);
- 	    
+
         return parent::_prepareCollection();
     }
 
@@ -82,15 +83,13 @@ class User_Surveys_Block_Adminhtml_Results_Grid extends Mage_Adminhtml_Block_Wid
         	'actions'   => array(array(
         	'caption'   => Mage::helper('user_surveys')->__('View Feedback'),
         	'url'    	=> array('base' => '*/*/view'),
-        	'field'   	=> 'id'
-        ),
-        	),
+        	'field'		=>'id'
+        )),
         	'filter'    => false,
         	'sortable'  => false,
-        	'index'     => 'stores',
+        	'index'     => 'store',
         	'is_system'	=> true,
-        )
-        	);
+        ));
 
         return parent::_prepareColumns();
     }

@@ -32,6 +32,8 @@ class User_Surveys_Block_Adminhtml_Surveys_Grid extends Mage_Adminhtml_Block_Wid
     public function __construct()
     {
         parent::__construct();
+        $this->setId('surveys');
+        $this->setDefaultSort('id');
         $this->setSaveParametersInSession(true);
         $this->setUseAjax(true);
     }
@@ -44,6 +46,7 @@ class User_Surveys_Block_Adminhtml_Surveys_Grid extends Mage_Adminhtml_Block_Wid
     protected function _prepareCollection()
     {
         $collection = Mage::getModel('user_surveys/forms')->getResourceCollection();
+       
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
@@ -89,7 +92,7 @@ class User_Surveys_Block_Adminhtml_Surveys_Grid extends Mage_Adminhtml_Block_Wid
                 )),
                 'filter'    => false,
                 'sortable'  => false,
-                'index'     => 'news',
+                'index'     => 'stores',
         ));
 
         return parent::_prepareColumns();
