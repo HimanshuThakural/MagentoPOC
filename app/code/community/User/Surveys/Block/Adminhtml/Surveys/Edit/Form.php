@@ -31,8 +31,7 @@ class User_Surveys_Block_Adminhtml_Surveys_Edit_Form extends Mage_Adminhtml_Bloc
      * @return User_Surveys_Block_Adminhtml_News_Edit_Form
      */
     protected function _prepareForm()
-    {
-        
+    {  
         $formId = Mage::registry('formId');
 
         $model = Mage::getModel('user_surveys/forms')->load($formId);
@@ -50,21 +49,24 @@ class User_Surveys_Block_Adminhtml_Surveys_Edit_Form extends Mage_Adminhtml_Bloc
             'method'  => 'post',
             'enctype' => 'multipart/form-data'
         ));
+        
         $form->setUseContainer(true);
-
         $fieldset = $form->addFieldset(
             'general',
             array(
                 'legend' => $this->__('Manage Survey Form')
             )
         );
+        
         if ($surveys_item->getId()) {
             $fieldset->addField('id', 'hidden', array(
                 'name' => 'id',
             ));
         }
 
-        // Add the fields that we want to be editable.
+        /**
+         *  Add the fields that we want to be editable.
+         */
         $fieldset->addField('form_name', 'text', array(
             'name'     => 'form_name',
             'label'    => Mage::helper('user_surveys')->__('Form Name'),

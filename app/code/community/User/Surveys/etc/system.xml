@@ -65,7 +65,7 @@
                             <show_in_store>1</show_in_store>
                         </items_per_page>
                         <days_difference translate="label">
-                            <label>Number of days since a event has been marked as recently added</label>
+                            <label>Number of days since a survey has been marked as recently added</label>
                             <comment>Empty value is the same as default 3.</comment>
                             <sort_order>50</sort_order>
                             <depends><enabled>1</enabled></depends>

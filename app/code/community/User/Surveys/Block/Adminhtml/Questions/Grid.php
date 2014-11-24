@@ -73,7 +73,6 @@ class User_Surveys_Block_Adminhtml_Questions_Grid extends Mage_Adminhtml_Block_W
         	
         ));
         
-
         return parent::_prepareColumns();
     }
 

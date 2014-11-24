@@ -28,7 +28,9 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
 {
     protected function _initAction()
     {
-        // load layout, set active menu and breadcrumbs
+        /**
+         * load layout, set active menu and breadcrumbs
+         */
         $this->loadLayout()
             ->_setActiveMenu('surveys/manage')
             ->_addBreadcrumb(
@@ -54,10 +56,10 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
 
     /**
      * Create new Questions
+     * same form is used to create and edit
      */
     public function newAction()
     {
-        // same form is used to create and edit
         $this->_forward('edit');
     }
     
@@ -104,7 +106,7 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
         // Init breadcrumbs
         $this->_initAction()->_addBreadcrumb($breadCrumb, $breadCrumb);
 
-        // 3. Set entered data if was error when we do save
+        // Set entered data if was error when we do save
         $data = Mage::getSingleton('adminhtml/session')->getFormData(true);
 
         if (!empty($data)) {
@@ -122,7 +124,7 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
         $redirectParams = array();
         $msg= "Added";
 
-        //data from post
+        /** data from post */
         $data = $this->getRequest()->getPost();
         echo '<pre>'; print_r($data); echo '</pre>';
         if ($data) {
@@ -166,13 +168,12 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
 
     public function deleteAction()
     {
-        // check if we know what should be deleted
         $id = $this->getRequest()->getParam('id');
 
         if ($id) {
             try {
-                // init model and delete
-                /** @var $model User_Surveys_Model_Item */
+                /** init model and delete
+                 * @var $model User_Surveys_Model_Item */
 
             	$collection = Mage::getModel('user_surveys/surveys')
             	->getCollection()
@@ -207,9 +208,8 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
             }
         }
 
-        // go to grid
+        /** go to grid */
         $this->_redirect('*/*/');
     }
     
 }
-/*End by Atul Pathak*/

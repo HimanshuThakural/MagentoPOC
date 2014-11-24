@@ -50,20 +50,6 @@ class User_Surveys_Block_Adminhtml_Questions_Edit extends Mage_Adminhtml_Block_W
         } else {
             $this->_removeButton('delete');
         }
-
-        $this->_formScripts[] = "
-            function toggleEditor() {
-                if (tinyMCE.getInstanceById('page_content') == null) {
-                    tinyMCE.execCommand('mceAddControl', false, 'page_content');
-                } else {
-                    tinyMCE.execCommand('mceRemoveControl', false, 'page_content');
-                }
-            }
-
-            function saveAndContinueEdit(){
-                editForm.submit($('edit_form').action+'back/edit/');
-            }
-        ";
     }
 
     /**

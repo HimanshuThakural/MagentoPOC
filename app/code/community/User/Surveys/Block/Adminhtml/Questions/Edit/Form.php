@@ -82,9 +82,7 @@ class User_Surveys_Block_Adminhtml_Questions_Edit_Form extends Mage_Adminhtml_Bl
             'note' => Mage::helper('user_surveys')->__('Multiple values should be separated with comma "," and Should Not CONTAIN SPACES. '),
 
         ));
-
-        // Add the fields that we want to be editable.
-
+        
         $form->setValues($model->getData());
         $this->setForm($form);
 
