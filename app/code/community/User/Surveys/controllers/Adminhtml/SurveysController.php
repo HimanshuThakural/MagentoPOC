@@ -31,7 +31,16 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 	 */
 	protected function _initAction() {
 		
-		$this->loadLayout ()->_setActiveMenu ( 'surveys/manage' )->_addBreadcrumb ( Mage::helper ( 'user_surveys' )->__ ( 'Surveys' ), Mage::helper ( 'user_surveys' )->__ ( 'Surveys' ) )->_addBreadcrumb ( Mage::helper ( 'user_surveys' )->__ ( 'Manage Surveys' ), Mage::helper ( 'user_surveys' )->__ ( 'Manage Surveys' ) );
+		$this->loadLayout ()
+			  ->_setActiveMenu ( 'surveys/manage' )
+		      ->_addBreadcrumb ( 
+		      		Mage::helper ( 'user_surveys' )->__ ( 'Surveys' ),
+		      	    Mage::helper ( 'user_surveys' )->__ ( 'Surveys' ) 
+			  )
+		      ->_addBreadcrumb (
+		      		Mage::helper ( 'user_surveys' )->__ ( 'Manage Surveys' ), 
+		      		Mage::helper ( 'user_surveys' )->__ ( 'Manage Surveys' ) 
+			  );
 		return $this;
 	}
 	
@@ -60,7 +69,6 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 		
 		$model = Mage::getModel ( 'user_surveys/forms' );
 		
-		// 2. if exists id, check it and load data
 		$formId = $this->getRequest ()->getParam ( 'id' );
 		if ($formId) {
 			$model->load ( $formId );
@@ -70,7 +78,6 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 				return $this->_redirect ( '*/*/' );
 			}
 			
-			// prepare title
 			$this->_title ( $model->getTitle () );
 			$breadCrumb = Mage::helper ( 'user_surveys' )->__ ( 'Edit Item' );
 		} else {
@@ -78,21 +85,17 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 			$breadCrumb = Mage::helper ( 'user_surveys' )->__ ( 'New Item' );
 		}
 		
-		// Init breadcrumbs
 		$this->_initAction ()->_addBreadcrumb ( $breadCrumb, $breadCrumb );
 		
-		// 3. Set entered data if was error when we do save
 		$data = Mage::getSingleton ( 'adminhtml/session' )->getFormData ( true );
 		
 		if (! empty ( $data )) {
 			$model->addData ( $data );
 		}
-		
-		// 4. Register model to use later in blocks
+
 		Mage::register ( 'surveys_item', $model );
 		Mage::register ( 'formId', $formId );
 		
-		// 5. render layout
 		$this->renderLayout ();
 	}
 	
@@ -103,13 +106,11 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 		$message = 'Created';
 		$flag;
 
-		// check if data sent
 		$data = $this->getRequest ()->getPost ();
 		if ($data) {
 			$data = $this->_filterPostData ( $data );
 			
-			// init model and set data
-			/* @var $model User_Surveys_Model_Item */
+			/** @var $model User_Surveys_Model_Item */
 			$model = Mage::getModel ( 'user_surveys/forms' );
 			
 			$formId = $this->getRequest ()->getParam ( 'id' );
@@ -118,7 +119,6 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 				$message = 'Updated';
 			}
 			
-			// Getting questions id in array
 			$questionIds = array ();
 			foreach ( $data as $key => $value ) {
 				if (preg_match ( '/questionsid_/', $key )) {
@@ -127,14 +127,10 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 				}
 			}
 			
-			// converting question ids array into string
 			$ids = implode ( ",", $questionIds );
 			
-			// getting form name from post method
 			$formName = $data ['form_name'];
-			
 			$status = $data ['status'];
-			
 			$visibility = $data ['visibility'];
 
 			$formData = $model_form = Mage::getModel('user_surveys/forms')->getCollection()
@@ -176,15 +172,14 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 				} else {
 					$model->setQuestionsId ( $ids );
 					$model->setFormName ( $formName );
-					$model->setStatus ( $status );
+					$model->setStatus ( 1 );
 					$model->setVisibility ( $visibility );
 					$model->save ();
 					$this->_getSession ()->addSuccess ( Mage::helper ( 'user_surveys' )->__ ( 'Survey Form ' . $message . ' Sucessfully' ) );
 					$this->_redirect('*/*/');
 				}
 				
-			} else {
-                // Saving to Model
+			} else {          
                 if($flag == 1) { 
                     $this->_getSession()->addError(
                             Mage::helper('user_surveys')->__('Form name already exists. Please fill another form name.'));
@@ -203,7 +198,6 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 					$model->setStatus ( $status );
 					$model->setVisibility ( $visibility );
 					
-					// saving into model
 					$model->save ();
 					$this->_getSession ()->addSuccess ( Mage::helper ( 'user_surveys' )->__ ( 'Survey Form ' . $message . ' Sucessfully' ) );
 					$this->_redirect('*/*/');
@@ -217,7 +211,6 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 	 */
 	public function deleteAction() {
 		
-		// check if we know what should be deleted
 		$itemId = $this->getRequest ()->getParam ( 'id' );
 		if ($itemId) {
 			try {
@@ -231,7 +224,6 @@ class User_Surveys_Adminhtml_SurveysController extends Mage_Adminhtml_Controller
 				}
 				$model->delete ();
 				
-				// display success message
 				$this->_getSession ()->addSuccess ( Mage::helper ( 'user_surveys' )->__ ( 'Survey Form deleted.' ) );
 			} catch ( Mage_Core_Exception $e ) {
 				$this->_getSession ()->addError ( $e->getMessage () );

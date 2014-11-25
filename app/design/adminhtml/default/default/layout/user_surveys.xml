@@ -31,10 +31,16 @@
             <block type="user_surveys/adminhtml_surveys" name="surveys" />
         </reference>
     </adminhtml_surveys_index>
+    
+     <adminhtml_questions_index>
+        <reference name="content">
+            <block type="user_surveys/adminhtml_questions" name="questions" />
+        </reference>
+    </adminhtml_questions_index>
 
      <adminhtml_surveys_results>
         <reference name="content">
-            <block type="user_surveys/adminhtml_results" name="surveys_results" />
+            <block type="user_surveys/adminhtml_results" name="results" />
         </reference>
     </adminhtml_surveys_results>
 
@@ -42,8 +48,12 @@
         <block type="user_surveys/adminhtml_surveys_grid" name="root"/>
     </adminhtml_surveys_grid>
 
+     <adminhtml_questions_grid>
+        <block type="user_surveys/adminhtml_questions_grid" name="root"/>
+    </adminhtml_questions_grid>
+    
     <adminhtml_results_grid>
-        <block type="user_surveys/adminhtml_results_grid" name="results"/>
+        <block type="user_surveys/adminhtml_results_grid" name="root"/>
     </adminhtml_results_grid>
 
     <adminhtml_surveys_new>

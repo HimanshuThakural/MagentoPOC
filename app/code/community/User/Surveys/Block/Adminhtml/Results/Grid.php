@@ -32,10 +32,11 @@ class User_Surveys_Block_Adminhtml_Results_Grid extends Mage_Adminhtml_Block_Wid
     public function __construct()
     {
         parent::__construct();
-        $this->setId('results');
-        $this->setDefaultSort('id');
+        $this->setId('results_grid');
+        $this->setDefaultSort('id','ASC');
+        $this->setFilterVisibility(false);
+        $this->setPagerVisibility(false);
         $this->setSaveParametersInSession(true);
-        $this->setUseAjax(true);
     }
 
     /**
@@ -46,9 +47,8 @@ class User_Surveys_Block_Adminhtml_Results_Grid extends Mage_Adminhtml_Block_Wid
     protected function _prepareCollection()
     {
    		$collection = Mage::registry('collection');
-   		
  	    $this->setCollection($collection);
-
+ 	    
         return parent::_prepareCollection();
     }
 
@@ -63,16 +63,19 @@ class User_Surveys_Block_Adminhtml_Results_Grid extends Mage_Adminhtml_Block_Wid
             'header'    => Mage::helper('user_surveys')->__('ID #'),
             'width'     => '150px',
             'index'     => 'id',
+        	'sortable'	=>false,
         ));
 
         $this->addColumn('user_id', array(
             'header'    => Mage::helper('user_surveys')->__('User Id'),
             'index'     => 'user_id',
+        	'sortable'  => false,
         ));
 
         $this->addColumn('User Email', array(
             'header'    => Mage::helper('user_surveys')->__('User Email'),
             'index'     => 'customer_email',
+        	'sortable'  => false,
         ));
 
         $this->addColumn('action', array(
@@ -85,7 +88,6 @@ class User_Surveys_Block_Adminhtml_Results_Grid extends Mage_Adminhtml_Block_Wid
         	'url'    	=> array('base' => '*/*/view'),
         	'field'		=>'id'
         )),
-        	'filter'    => false,
         	'sortable'  => false,
         	'index'     => 'store',
         	'is_system'	=> true,

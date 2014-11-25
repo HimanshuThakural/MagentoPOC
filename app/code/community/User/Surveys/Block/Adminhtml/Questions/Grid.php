@@ -33,7 +33,7 @@ class User_Surveys_Block_Adminhtml_Questions_Grid extends Mage_Adminhtml_Block_W
     public function __construct()
     {   
         parent::__construct();
-        $this->setId('questionsGrid');
+        $this->setId('questions_grid');
         $this->setDefaultDir('DESC');
         $this->setSaveParametersInSession(true);
         $this->setUseAjax(true);

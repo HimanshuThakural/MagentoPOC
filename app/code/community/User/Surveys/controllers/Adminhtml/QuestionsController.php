@@ -31,26 +31,24 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
         /**
          * load layout, set active menu and breadcrumbs
          */
-        $this->loadLayout()
-            ->_setActiveMenu('surveys/manage')
-            ->_addBreadcrumb(
-                  Mage::helper('user_surveys')->__('Surveys'),
-                  Mage::helper('user_surveys')->__('Surveys')
-              )
-            ->_addBreadcrumb(
-                  Mage::helper('user_surveys')->__('Manage Surveys'),
-                  Mage::helper('user_surveys')->__('Manage Surveys')
-              )
-        ;
-        return $this;
-    }
-
+    $this->loadLayout ()
+			  ->_setActiveMenu ( 'surveys/manage' )
+		      ->_addBreadcrumb ( 
+		      		Mage::helper ( 'user_surveys' )->__ ( 'Surveys' ),
+		      	    Mage::helper ( 'user_surveys' )->__ ( 'Surveys' ) 
+			  )
+		      ->_addBreadcrumb (
+		      		Mage::helper ( 'user_surveys' )->__ ( 'Manage Questions' ), 
+		      		Mage::helper ( 'user_surveys' )->__ ( 'Manage Questions' ) 
+			  );
+		return $this;
+	}
     public function indexAction()
     {   
         $this->_title($this->__('Questions'))->_title($this->__('Questions Inventory'));
-        $this->loadLayout();
-        $this->_setActiveMenu('surveys/surveys');
-        $this->_addContent($this->getLayout()->createBlock('user_surveys/adminhtml_questions'));
+        
+       
+        $this->_initAction ();
         $this->renderLayout();
     }
 
@@ -63,15 +61,6 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
         $this->_forward('edit');
     }
     
-    /**
-     * Grid ajax action
-     */
-    public function gridAction()
-    {
-    	$this->loadLayout();
-    	$this->renderLayout();
-    }
-
     /**
      * Create edit form																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																										
      */
@@ -103,10 +92,8 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
             $breadCrumb = Mage::helper('user_surveys')->__('New Item');
         }
 
-        // Init breadcrumbs
         $this->_initAction()->_addBreadcrumb($breadCrumb, $breadCrumb);
 
-        // Set entered data if was error when we do save
         $data = Mage::getSingleton('adminhtml/session')->getFormData(true);
 
         if (!empty($data)) {
@@ -127,39 +114,29 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
         /** data from post */
         $data = $this->getRequest()->getPost();
         echo '<pre>'; print_r($data); echo '</pre>';
-        if ($data) {
-            //load questions model for saving    
+        if ($data) {  
             $model = Mage::getModel('user_surveys/questions');
-        
-            //check for id for edit action
             $id = $this->getRequest()->getParam('id');
 
             if($id) {
                 $model->load($id);
-                $msg= "Edited";
+                $msg= "Updated";
             }
 
-            //get question value
             $question= $data['quesion_text'];
 
-            //get type value
             $type= $data['input_type'];
 
-            //get options
             $options= $data['Field_option(s)'];
             $array_options = explode(',', $options);
             $trimmed_array=array_map('trim',$array_options);
             $comma_separated_options = implode(",", $trimmed_array);
             
-            // Using setters to set in Model
             $model->setQuestions($question);
             $model->setType($type);
             $model->setOptions($comma_separated_options);
-            
-            //saving into model
             $model->save();
             
-            // display success message
             $this->_getSession()->addSuccess(
             Mage::helper('user_surveys')->__('Question ' .$msg. ' Successfully.'));    
         }
@@ -212,4 +189,11 @@ class User_Surveys_Adminhtml_QuestionsController extends Mage_Adminhtml_Controll
         $this->_redirect('*/*/');
     }
     
+    /**
+     * Grid ajax action
+     */
+    public function gridAction() {
+    	$this->loadLayout ();
+    	$this->renderLayout ();
+    }
 }
