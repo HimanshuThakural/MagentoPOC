@@ -99,10 +99,12 @@ $questions = $installer->getConnection()
     ->addColumn('questions', Varien_Db_Ddl_Table::TYPE_TEXT, 200, array(
         'nullable' => true,
         'default'  => null,
+        'value'    => 'lklkj ?',
     ), 'Questions')
     ->addColumn('type', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
         'nullable' => true,
         'default'  => null,
+        'value'    => 'text ?',
     ), 'Type')
    ->addColumn('options', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
         'nullable' => true,
