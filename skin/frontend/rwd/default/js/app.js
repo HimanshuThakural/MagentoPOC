@@ -645,8 +645,8 @@ var ProductMediaManager = {
                 image.parents('.product-image').addClass('zoom-available');
             }
         }
-
-        image.elevateZoom();
+        // edit by ankush 
+       // image.elevateZoom();
     },
 
     swapImage: function(targetImage) {

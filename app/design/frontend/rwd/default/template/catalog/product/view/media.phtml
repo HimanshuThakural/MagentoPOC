@@ -64,10 +64,12 @@
     </div>
 </div>
 
-<?php if (count($this->getGalleryImages()) > 0): ?>
+<?php 
+  if (count($this->getGalleryImages()) > 0): 
+?>
 <div class="more-views">
     <h2><?php echo $this->__('More Views') ?></h2>
-    <ul class="product-image-thumbs">
+    <ul class="product-image-thumbs" id="hide-thumb-image">
     <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
         <?php
         if (($filterClass = $this->getGalleryFilterHelper()) && ($filterMethod = $this->getGalleryFilterMethod()) && !Mage::helper($filterClass)->$filterMethod($_product, $_image)):

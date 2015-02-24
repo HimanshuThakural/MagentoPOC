@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    User
+ * @package     User_Surveys
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <User_Surveys>
+            <version>1.0.1</version>
+        </User_Surveys>
+    </modules>
+    <global>
+        <models>
+            <user_surveys>
+                <class>User_Surveys_Model</class>
+                <resourceModel>surveys_resource</resourceModel>
+            </user_surveys>
+            <surveys_resource>
+                <class>User_Surveys_Model_Resource</class>
+                <entities>
+                    <surveys>
+                        <table>surveys</table>
+                    </surveys>
+                    <forms>
+                        <table>surveys_form</table>
+                    </forms>
+                    <questions>
+                        <table>surveys_questions</table>
+                    </questions>
+                </entities>
+            </surveys_resource>
+        </models>
+        <helpers>
+            <user_surveys>
+                <class>User_Surveys_Helper</class>
+            </user_surveys>
+        </helpers>
+        <blocks>
+            <user_surveys>
+                <class>User_Surveys_Block</class>
+            </user_surveys>
+        </blocks>
+        <resources>
+            <user_surveys_setup>
+                <setup>
+                    <module>User_Surveys</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+            </user_surveys_setup>
+        </resources>
+        <surveys>
+            <before_surveys_item_display>
+                <observers>
+                    <user_surveys>
+                        <class>user_surveys/observer</class>
+                        <method>beforeSurveysDisplayed</method>
+                    </user_surveys>
+                </observers>
+            </before_surveys_item_display>
+        </surveys>
+    </global>
+    <frontend>
+        <routers>
+            <user_surveys>
+                <use>standard</use>
+                <args>
+                    <module>User_Surveys</module>
+                    <frontName>surveys</frontName>
+                </args>
+            </user_surveys>
+        </routers>
+        <layout>
+            <updates>
+                <user_surveys>
+                    <file>user_surveys.xml</file>
+                </user_surveys>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <User_Surveys before="Mage_Adminhtml">User_Surveys_Adminhtml</User_Surveys>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <user_surveys>
+                    <file>user_surveys.xml</file>
+                </user_surveys>
+            </updates>
+        </layout>
+    </adminhtml>
+    <default>
+        <surveys>
+            <view>
+                <enabled>1</enabled>
+                <items_per_page>10</items_per_page>
+                <days_difference>3</days_difference>
+            </view>
+        </surveys>
+    </default>
+</config>

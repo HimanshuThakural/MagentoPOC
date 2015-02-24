@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+	    <CPICA_ProductBaseImage>
+	        <version>1.0.1</version>
+	    </CPICA_ProductBaseImage>
+	</modules>  
+	<global>
+		  <blocks>
+            <cpica_productbaseimage>
+                <class>CPICA_ProductBaseImage_Block</class>
+            </cpica_productbaseimage>
+		    <catalog>
+		        <rewrite>
+		            <product_view_type_configurable>CPICA_ProductBaseImage_Block_catalog_Product_View_Type_Configurable</product_view_type_configurable>
+		        </rewrite>
+		    </catalog>
+		</blocks>
+	</global>  
+	<frontend>
+	    <routers>
+	        <catalog>
+	            <args>
+	                <modules>
+	                    <CPICA_ProductBaseImage before="Mage_Catalog">CPICA_ProductBaseImage</CPICA_ProductBaseImage>
+	                </modules>    
+	            </args>
+	        </catalog>
+	    </routers>    
+	</frontend>    
+</config>

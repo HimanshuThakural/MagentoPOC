@@ -1,0 +1,215 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    user
+ * @package     user_surveys
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+<?php $_featuredItem = $this->helper('user_surveys')->getSurveysItemInstance(); ?>
+    <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+    <div class="page-title">
+        <h1 ><?php echo Mage::helper('user_surveys')->__($this->escapeHtml($_featuredItem->getFormName())) ?></h1>
+    </div>
+    <form action="<?php echo $this->getFormAction(); ?>" id="surveysForm" method="post" class="scaffold-form">
+    <div class="fieldset">
+        <!-- <h2 class="legend"><?php echo Mage::helper('user_surveys')->__('User Reviews') ?></h2> -->
+        <ul class="form-list">
+            <li>
+                 <input name="user_id" type="hidden" value="<?php echo Mage::getSingleton('customer/session')->getId(); ?>" />
+            </li>
+            <li>
+
+                <input name="form_id" type="hidden" value="<?php echo Mage::helper('user_surveys')->__($this->escapeHtml($_featuredItem->getId())) ?>" />
+            </li>
+            <li>
+                <?php $que= Mage::registry('questions');
+                    $type= Mage::registry('type');
+                    $options= Mage::registry('options');
+                      
+                    if(Mage::registry('in_popup')){
+                      	$in_popup = Mage::registry('in_popup');
+                      	echo '<input name="featured_popup" type="hidden" value=""/>';
+                    }
+                ?>
+
+                <?php
+                foreach($type as $key => $value) { 
+
+					// If input type is TEXT
+                    switch ($value) {
+                        case "text":
+                        ?>
+                        <label for="question" class="required" ><b><?php echo $que[$key]?></b>
+                        </label>
+                        <br/>
+                        <div class="input-box">
+                            <input name="question_<?php echo $key ?>" class= "required-entry input-text" type="text" id="question_<?php echo $key ?>" title="<?php echo Mage::helper('user_surveys')->__('Question') ?>">
+                            </input>
+                        </div>
+                        <br/>
+                        <?php
+                        break;
+                        ?>
+
+
+						<!-- If input type is TEXT AREA -->
+                        <?php
+                        case "textarea":
+                        ?>
+                        <label for="question" ><b><?php echo $que[$key]?></b>
+                        </label>
+                        <br/>
+                        <div class="input-box">
+                            <textarea class= "required-entry input-text" name="question_<?php echo $key ?>"  id="question_<?php echo $key ?>" title="<?php echo Mage::helper('user_surveys')->__('Question') ?>" >
+                            </textarea>
+                        </div>
+                        <br/>
+                        <?php
+                        break;
+                        ?>
+
+
+						<!-- If input type is SELECT -->
+                        <?php
+                        case "select":
+                        ?>
+                        <label for="question" ><b><?php echo $que[$key] ?></b>
+                        </label><br/>
+
+                        <div class="input-box">
+                            <select name="question_<?php echo $key ?>" id="question_<?php echo $key ?>" title="<?php echo Mage::helper('user_surveys')->__('Question') ?>">
+
+                            <?php
+                                foreach ($options as $opt => $val) {
+                                    if ($opt == $key) {
+                                        foreach ($val as $index => $output) { ?>
+                                            <option><?php echo $output ?></option>
+                                        <?php
+                                        }
+
+                                    }
+                                }
+                            ?>
+                            </select>
+                        </div>
+                        <br/>
+                        <?php
+                        break;
+                        ?>
+
+						<!-- IF input type is MULTI SELECT -->
+                        <?php
+                        case "multiselect":
+                        ?>
+
+                        <label for="question" ><b><?php echo $que[$key] ?></b>
+                        </label><br/>
+
+                        <div class="input-box">
+                            <?php
+                                foreach ($options as $opt => $val) {
+                                    if ($opt == $key) { 
+                                        foreach ($val as $index => $output) { ?>
+                                            <input name="option_checked_<?php echo $index?>--<?php echo $key?>" type="checkbox" value="<?php echo $output ?>">&nbsp; &nbsp;<?php echo $output ?><br/>
+                                        <?php
+                                        }
+                                    }
+                                }
+                            ?>
+                            
+
+                            <!-- <p style="color:red;"><i>You can select multiple values by holding CTRL (Control Button) and clicking options</i></p> -->
+                        </div>
+                        <br/>
+                        <?php
+                        break;
+                        ?>
+
+						<!-- IF input type is BOOLEAN -->
+                        <?php
+                        case "boolean":
+                        ?>    
+                        <label for="question"><b><?php echo $que[$key]?></b>
+                        </label>
+                        <br/>
+                        <div class="input-box">
+
+                            <?php
+                                foreach ($options as $opt => $val) {
+                                    if ($opt == $key) { 
+                                        foreach ($val as $index => $output) { ?>
+                                            <input name="question_<?php echo $key?>" type="radio"  value="<?php echo $output?>">&nbsp; &nbsp;<?php echo $output?><br/>
+                                        <?php
+                                        }
+                                    }
+                                }
+                            ?>
+
+                        </div>
+                        <br/>
+                        <?php
+
+                        break;
+						/*if type is date*/
+                        case "date":
+                        ?>
+                        <label for="question" class= "required"><b><?php echo $que[$key]?></b>
+                        </label>
+                        <br/>
+                        <div class="input-box">
+                            <input type="date" readonly="true" class= "required-entry input-text" name="question_<?php echo $key ?>" id="_dob" value="" />
+                            <img id="_dob_trig" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'adminhtml/default/default/images/grid-cal.gif'; ?>"  class=""/>
+                        </div>
+
+                        <script type="text/javascript">// <![CDATA[
+                        Calendar.setup({
+                            inputField : '_dob',
+                            ifFormat : '%e/%m/%y',
+                            button : '_dob_trig',
+                            align : 'Bl',
+                            singleClick : true
+                        });
+
+                        // ]]></script>
+
+                        <br/>
+                        <?php
+                        break;
+                    }
+                }
+                ?>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="buttons-set">
+        <input type="text"  name="hideit" id="hideit" value="" style="display:none !important;" />
+        <button type="submit" align="center" title="<?php echo Mage::helper('contacts')->__('Submit') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Submit') ?></span></span></button>
+    </div>
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+    var surveysForm = new VarienForm('surveysForm', true);
+//]]>
+</script>

@@ -1,0 +1,41 @@
+<?php
+$count;
+$rulesCollection = Mage::getResourceModel('salesrule/rule_collection');
+    foreach ($rulesCollection->addFieldToFilter('is_active', array('eq' => 1)) 
+            as $value):
+        $rule = $value['name'];
+        $ruleId = $value['rule_id'];
+        $count +=1;
+    ?>
+    <div  style="margin:20px 0px 20px 0px !important;box-shadow: 0px 0px 8px #367cca; position: relative !important; font-family:'segoe ui light','segoe ui',calibri, arial, Georgia, 'Times New Roman', Times, serif;background: #fefefe; border:2px #367cca solid; padding:8px; border-radius:10px;width:430px;min-height:180px;opacity: 0.9 !important;background: #fefefe !important"> <div style="width:58%;height:100%;float:left;box-sizing: border-box; ">
+        <div style="font-size:16px; color:#367cca; line-height:35px;border-bottom:1px solid #f1f1f1; padding-bottom:5px">
+            <?php echo($rule);?>
+        </div></div>
+   <p><button style="color:#367cca" id="<?php echo($count); ?>" onclick="copyToClipboard(this)">Get Code</button></p>
+<div style="clear:both;"></div>
+        <?php
+        $couponCollection = Mage::getResourceModel('salesrule/coupon_collection');
+        foreach ($couponCollection->addFieldToFilter('rule_id', array('eq' => $ruleId))->addFieldToFilter('type',array('eq' => 0)) 
+                as $code):
+                
+               $couponCode = $code['code'];
+        ?> 
+        
+            <p id="couponCode_<?php echo($count); ?>" style="font-size:16px; color:#009900; line-height:35px;border-bottom:1px solid #f1f1f1; padding-bottom:5px">
+                <?php echo($couponCode);?>
+
+            </p>
+        <?php endforeach; ?>
+    </div>
+<?php endforeach; ?>
+<script>
+function copyToClipboard(res) {
+  var id = res.id;
+  var couponCode = "couponCode_";
+  var code= couponCode.concat(id);
+  var couponCode= document.getElementById(code).innerHTML;
+   
+window.prompt('Copy Code by Ctrl+C',couponCode);
+  
+}
+</script>

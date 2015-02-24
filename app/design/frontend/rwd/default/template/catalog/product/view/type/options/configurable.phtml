@@ -27,6 +27,12 @@
 
 <?php
 $_product    = $this->getProduct();
+$_productData = $_product->getData();
+$productId = $_productData['entity_id'];
+   ?>
+<input type="hidden" name="entityId" id="entityHiddenField" value="<?php echo $productId ?>" />
+
+<?php
 $_attributes = Mage::helper('core')->decorateArray($this->getAllowAttributes());
 $_jsonConfig = $this->getJsonConfig();
 $_renderers = $this->getChild('attr_renderers')->getSortedChildren();
@@ -52,7 +58,7 @@ $_renderers = $this->getChild('attr_renderers')->getSortedChildren();
         <dt><label class="required"><em>*</em><?php echo $_attribute->getLabel() ?></label></dt>
         <dd<?php if ($_attribute->decoratedIsLast){?> class="last"<?php }?>>
             <div class="input-box">
-                <select name="super_attribute[<?php echo $_attribute->getAttributeId() ?>]" id="attribute<?php echo $_attribute->getAttributeId() ?>" class="required-entry super-attribute-select">
+                <select name="super_attribute[<?php echo $_attribute->getAttributeId() ?>]" id="attribute<?php echo $_attribute->getAttributeId() ?>" onChange="updateImage()" class="required-entry super-attribute-select">
                     <option><?php echo $this->__('Choose an Option...') ?></option>
                   </select>
               </div>
@@ -60,8 +66,41 @@ $_renderers = $this->getChild('attr_renderers')->getSortedChildren();
         <?php endif; ?>
     <?php endforeach; ?>
     </dl>
+
     <script type="text/javascript">
         var spConfig = new Product.Config(<?php echo $_jsonConfig ?>);
     </script>
     <?php echo $this->getChildHtml('after') ?>
 <?php endif;?>
+<script >
+function updateImage(){
+    var colorId = document.getElementById("attribute92");
+    var productId = document.getElementById("entityHiddenField");
+
+       new Ajax.Request("<?php echo $this->getUrl('catalog/product/showProductImage') ?>", {
+            method: 'Post',
+            dataType: 'json',
+            parameters: { colorId: colorId.value, productId: productId.value },
+            onComplete: function(transport) { 
+                var parseData = JSON.parse(transport.responseText);
+                var moreImage = parseData.a;
+                var imageMain = parseData.b;
+                var i =0;
+                
+                document.getElementById("image-main").src = imageMain;
+                document.getElementById("hide-thumb-image").innerHTML=' ';
+                
+                moreImage.forEach(function(image) { var imgVar = image;
+                document.getElementById("hide-thumb-image").innerHTML += "<li> <a data-image-index=\""+i+"\" onClick=changeImage(\'" +image+ "\') > <img width=\""+75+"\" height=\""+75+"\" src=\"" + image + "\" > </a> </li>";
+                    i += 1;
+                });
+            }
+        });
+    };
+</script>
+
+<script>
+function changeImage(element) {
+    document.getElementById("image-main").src = element;
+}
+</script>
